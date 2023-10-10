@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MainActivity</string>
+    <string name="botonJugar">JUGAR</string>
+    <string name="nombreJuego">QUIZ LABS</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
