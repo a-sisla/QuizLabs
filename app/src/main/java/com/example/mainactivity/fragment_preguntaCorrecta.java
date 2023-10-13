@@ -10,10 +10,10 @@ import android.view.ViewGroup;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Pregunta1#newInstance} factory method to
+ * Use the {@link fragment_preguntaCorrecta#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Pregunta1 extends Fragment {
+public class fragment_preguntaCorrecta extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +24,7 @@ public class Pregunta1 extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Pregunta1() {
+    public fragment_preguntaCorrecta() {
         // Required empty public constructor
     }
 
@@ -34,30 +34,16 @@ public class Pregunta1 extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Pregunta1.
+     * @return A new instance of fragment fragment_preguntaCorrecta.
      */
     // TODO: Rename and change types and number of parameters
-    public static Pregunta1 newInstance(String param1, String param2) {
-        Pregunta1 fragment = new Pregunta1();
+    public static fragment_preguntaCorrecta newInstance(String param1, String param2) {
+        fragment_preguntaCorrecta fragment = new fragment_preguntaCorrecta();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
-    }
-
-    public void onClick(View v) {
-        System.out.println("1---------------------");
-        // Obtener la referencia a la actividad
-        GameActivity activity = (GameActivity) getActivity();
-
-        if (activity != null) {
-            // Llamar al método de la actividad
-            System.out.println("2---------------------");
-            activity.respuestaCorrecta();
-            System.out.println("3---------------------");
-            //activity.avanzarSiguientePregunta();
-        }
     }
 
     @Override
@@ -73,6 +59,6 @@ public class Pregunta1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pregunta1, container, false);
+        return inflater.inflate(R.layout.fragment_pregunta_correcta, container, false);
     }
 }

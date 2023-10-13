@@ -1,22 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ladrillos"
     android:layout_weight="4"
+    android:orientation="vertical"
     tools:context=".Pregunta1" >
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:rotationX="-3"
-        android:rotationY="-3"
-        android:text="Button"
-        tools:layout_gravity="center_vertical" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/preg1resp1"
+        android:layout_width="113dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="20dp"
+        android:onClick="onClick"
+        android:text="Francia"
+        app:layout_constraintBottom_toTopOf="@+id/preg1resp2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pregunta1"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/preg1resp2"
+        android:layout_width="110dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="20dp"
+        android:text="Brasil"
+        app:layout_constraintBottom_toTopOf="@+id/preg1resp3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/preg1resp4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="172dp"
+        android:text="Argentina"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/preg1resp3"
+        android:layout_width="112dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="20dp"
+        android:text="España"
+        app:layout_constraintBottom_toTopOf="@+id/preg1resp4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/pregunta1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:fontFamily="sans-serif"
+        android:text="¿Quién ganó el mundial de fútbol en 2010? "
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
 
