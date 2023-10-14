@@ -2,6 +2,23 @@
     <string name="app_name">MainActivity</string>
     <string name="botonJugar">JUGAR</string>
     <string name="nombreJuego">QUIZ LABS</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="textoGameOver1">¡HAS OBTENIDO...</string>
+    <string name="botonInicio">INICIO</string>
+    <string name="textoGameOver2">PUNTOS!</string>
+    <string name="botonFrancia">Francia</string>
+    <string name="botonBrasil">Brasil</string>
+    <string name="botonEspaña">España</string>
+    <string name="botonArgentina">Argentina</string>
+    <string name="pregunta1">1. ¿Quién ganó el mundial de fútbol en 2010?</string>
+    <string name="RespuestaCorrecta">¡RESPUESTA CORRECTA!</string>
+    <string name="botonSiguiente">SIGUIENTE</string>
+    <string name="sumaPuntos">+3 PUNTOS</string>
+    <string name="RespuestaIncorrecta">¡RESPUESTA INCORRECTA!</string>
+    <string name="restaPuntos">-2 PUNTOS</string>
+    <string name="botonReinciar">REINICIAR</string>
+    <string name="pregunta2">2. ¿En qué año comenzó la Primera Guerra Mundial?</string>
+    <string name="boton1905">1905</string>
+    <string name="boton1914">1914</string>
+    <string name="boton1921">1921</string>
+    <string name="boton1939">1939</string>
 </resources>

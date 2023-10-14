@@ -4,64 +4,61 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
 
 public class GameActivity extends AppCompatActivity {
-    private int puntuacion = 0;
-    private TextView puntosTextView;
-
-    private int numeroPreguntaActual = 1;
 
     Pregunta1 pregunta1;
     Pregunta2 pregunta2;
     Pregunta3 pregunta3;
     Pregunta4 pregunta4;
     Pregunta5 pregunta5;
+    PreguntaCorrecta preguntaCorrecta;
+    PreguntaIncorrecta preguntaIncorrecta;
 
-    @SuppressLint("MissingInflatedId")
+    private int puntuacion = 0;
+    private int numeroPreguntaActual = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        puntosTextView = findViewById(R.id.puntosTextView);
-        puntosTextView.setText("Puntos: " + puntuacion);
-
-        /*
         pregunta1 = new Pregunta1();
         pregunta2 = new Pregunta2();
         pregunta3 = new Pregunta3();
         pregunta4 = new Pregunta4();
         pregunta5 = new Pregunta5();
-        */
-        //getSupportFragmentManager().beginTransaction().add(R.id.contenedorFragments,pregunta1).commit();
-        mostrarPreguntaActual();
+        preguntaCorrecta = new PreguntaCorrecta();
+        preguntaIncorrecta = new PreguntaIncorrecta();
 
+        getSupportFragmentManager().beginTransaction().add(R.id.contenedorFragments, pregunta1).commit();
     }
 
-    private void mostrarPreguntaActual() {
+    public void mostrarPreguntaActual() {
         Fragment preguntaFragment = null;
 
-        // Determinar cuál es la pregunta actual y cargar el fragmento correspondiente
+        // Determinar cuál es la pregunta actual y cargar el fragment correspondiente
         switch (numeroPreguntaActual) {
             case 1:
-                preguntaFragment = new Pregunta1();
+                preguntaFragment = pregunta1;
                 break;
             case 2:
-                preguntaFragment = new Pregunta2();
+                preguntaFragment = pregunta2;
                 break;
             case 3:
-                preguntaFragment = new Pregunta3();
+                preguntaFragment = pregunta3;
                 break;
             case 4:
-                preguntaFragment = new Pregunta4();
+                preguntaFragment = pregunta4;
                 break;
             case 5:
-                preguntaFragment = new Pregunta5();
+                preguntaFragment = pregunta5;
             default:
-                //Mostrar fragment "Fin del juego, has conseguido x puntos" Pulsar botón volver menu principal
+                //Mostrar activity "Fin del juego, has conseguido x puntos" Pulsar botón volver menu principal
+
                 break;
         }
 
@@ -70,27 +67,26 @@ public class GameActivity extends AppCompatActivity {
         }
     }
 
-    public void respuestaCorrecta(){
-        getSupportFragmentManager().beginTransaction().replace(R.id.contenedorFragments2, new fragment_preguntaCorrecta()).commit();
+    public void reinciar() {
+        puntuacion = 0;
+        numeroPreguntaActual = 1;
     }
-
-    //Se le llamará cuando en el fragment de respuesta correcta/incorrecta se pulse al botón de siguiente pregunta
-    public void avanzarSiguientePregunta() {
-        numeroPreguntaActual++;
-        mostrarPreguntaActual();
-    }
-
-    public void aumentarPuntuacion() {
+    public void sumarPuntuacion() {
         puntuacion += 3;
-        actualizarPuntosTextView();
     }
-
     public void restarPuntuacion() {
         puntuacion -= 2;
     }
 
-    private void actualizarPuntosTextView() {
-        puntosTextView.setText("Puntuación: " + puntuacion);
+    public void avanzarPregunta() {
+        numeroPreguntaActual++;
     }
 
+    public void mostrarFragmentRespuestaCorrecta(){
+        getSupportFragmentManager().beginTransaction().replace(R.id.contenedorFragments, preguntaCorrecta).commit();
+    }
+
+    public void mostrarFragmentRespuestaIncorrecta(){
+        getSupportFragmentManager().beginTransaction().replace(R.id.contenedorFragments, preguntaIncorrecta).commit();
+    }
 }

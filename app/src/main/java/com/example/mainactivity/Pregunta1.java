@@ -3,10 +3,13 @@ package com.example.mainactivity;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -47,16 +50,21 @@ public class Pregunta1 extends Fragment {
     }
 
     public void onClick(View v) {
-        System.out.println("1---------------------");
         // Obtener la referencia a la actividad
         GameActivity activity = (GameActivity) getActivity();
 
         if (activity != null) {
             // Llamar al método de la actividad
-            System.out.println("2---------------------");
-            activity.respuestaCorrecta();
-            System.out.println("3---------------------");
+
             //activity.avanzarSiguientePregunta();
+        }
+    }
+
+    public void comprobarRespuesta1(View v) {
+        GameActivity activity = (GameActivity) getActivity();
+        if (activity != null) {
+            activity.sumarPuntuacion();
+            activity.mostrarFragmentRespuestaCorrecta();
         }
     }
 
@@ -73,6 +81,57 @@ public class Pregunta1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pregunta1, container, false);
+        View vista = inflater.inflate(R.layout.fragment_pregunta1, container, false);
+
+        Button botonRespuesta1 = (Button) vista.findViewById(R.id.preg1resp1);
+        Button botonRespuesta2 = (Button) vista.findViewById(R.id.preg1resp2);
+        Button botonRespuesta3 = (Button) vista.findViewById(R.id.preg1resp3);
+        Button botonRespuesta4 = (Button) vista.findViewById(R.id.preg1resp4);
+
+        botonRespuesta1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                GameActivity activity = (GameActivity) getActivity();
+                if (activity != null) {
+                    activity.restarPuntuacion();
+                    activity.mostrarFragmentRespuestaIncorrecta();
+                }
+            }
+        });
+
+        botonRespuesta2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                GameActivity activity = (GameActivity) getActivity();
+                if (activity != null) {
+                    activity.restarPuntuacion();
+                    activity.mostrarFragmentRespuestaIncorrecta();
+                }
+            }
+        });
+
+        botonRespuesta3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                GameActivity activity = (GameActivity) getActivity();
+                if (activity != null) {
+                    activity.sumarPuntuacion();
+                    activity.mostrarFragmentRespuestaCorrecta();
+                }
+            }
+        });
+
+        botonRespuesta4.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                GameActivity activity = (GameActivity) getActivity();
+                if (activity != null) {
+                    activity.restarPuntuacion();
+                    activity.mostrarFragmentRespuestaIncorrecta();
+                }
+            }
+        });
+
+        return vista;
     }
 }
