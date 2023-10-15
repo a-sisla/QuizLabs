@@ -21,4 +21,12 @@
     <string name="boton1914">1914</string>
     <string name="boton1921">1921</string>
     <string name="boton1939">1939</string>
+    <string name="selecciona_respuesta">Selecciona una respuesta</string>
+    <array name="opciones_respuestas">
+        <item></item>
+        <item>Islandia</item>
+        <item>Suecia</item>
+        <item>Noruega</item>
+        <item>Finlandia</item>
+    </array>
 </resources>

@@ -7,6 +7,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +26,8 @@ public class Pregunta4 extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private Spinner spinnerRespuestas;
 
     public Pregunta4() {
         // Required empty public constructor
@@ -54,11 +59,40 @@ public class Pregunta4 extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pregunta4, container, false);
+        View vista = inflater.inflate(R.layout.fragment_pregunta4, container, false);
+
+        spinnerRespuestas = vista.findViewById(R.id.spinnerRespuestas);
+        Button botonValidar = vista.findViewById(R.id.botonValidar);
+
+        botonValidar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                validarRespuesta();
+            }
+        });
+
+        return vista;
     }
+
+    private void validarRespuesta() {
+        String respuestaSeleccionada = spinnerRespuestas.getSelectedItem().toString();
+        GameActivity activity = (GameActivity) getActivity();
+
+        if (respuestaSeleccionada.equals("Finlandia")) {
+            activity.sumarPuntuacion();
+            activity.mostrarFragmentRespuestaCorrecta();
+        } else if(respuestaSeleccionada.equals(""))
+            Toast.makeText(getActivity(), "Debes seleccionar una opción", Toast.LENGTH_SHORT).show();
+        else {
+            activity.restarPuntuacion();
+            activity.mostrarFragmentRespuestaIncorrecta();
+        }
+    }
+
+
+
+
 }

@@ -7,6 +7,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +17,8 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class Pregunta3 extends Fragment {
+
+    private int seleccionUsuario = 0;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,6 +64,76 @@ public class Pregunta3 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pregunta3, container, false);
+        View vista = inflater.inflate(R.layout.fragment_pregunta3, container, false);
+
+        Button botonRespuesta1 = vista.findViewById(R.id.radioRespuesta1);
+        Button botonRespuesta2 = vista.findViewById(R.id.radioRespuesta2);
+        Button botonRespuesta3 = vista.findViewById(R.id.radioRespuesta3);
+        Button botonRespuesta4 = vista.findViewById(R.id.radioRespuesta4);
+
+        botonRespuesta1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                GameActivity activity = (GameActivity) getActivity();
+                if (activity != null) {
+                    seleccionUsuario = 1;
+                }
+            }
+        });
+
+        botonRespuesta2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                GameActivity activity = (GameActivity) getActivity();
+                if (activity != null) {
+                    seleccionUsuario = 2;
+                }
+            }
+        });
+
+        botonRespuesta3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                GameActivity activity = (GameActivity) getActivity();
+                if (activity != null) {
+                    seleccionUsuario = 3;
+                }
+            }
+        });
+
+        botonRespuesta4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                GameActivity activity = (GameActivity) getActivity();
+                if (activity != null) {
+                    seleccionUsuario = 4;
+                }
+            }
+        });
+
+        Button botonValidar = vista.findViewById(R.id.botonValidar);
+        RadioGroup radioGroup = vista.findViewById(R.id.radioGroupPregunta3);
+        botonValidar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int selectedId = radioGroup.getCheckedRadioButtonId();
+                if (selectedId == -1) {
+                    // No se ha seleccionado ninguna opción
+                    Toast.makeText(getActivity(), "Debes seleccionar una opción", Toast.LENGTH_SHORT).show();
+                } else {
+                    GameActivity activity = (GameActivity) getActivity();
+                    if(seleccionUsuario == 2) {
+                        activity.sumarPuntuacion();
+                        activity.mostrarFragmentRespuestaCorrecta();
+                    }else{
+                        activity.restarPuntuacion();
+                        activity.mostrarFragmentRespuestaIncorrecta();
+                    }
+                }
+            }
+        });
+
+        return vista;
     }
+
 }
