@@ -7,14 +7,25 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Pregunta2#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Pregunta2 extends Fragment {
+public class Pregunta2 extends Fragment implements AdapterView.OnItemClickListener {
+
+
+    private ListView listView;
+    private List<String> respuestas;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -50,6 +61,7 @@ public class Pregunta2 extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -59,58 +71,41 @@ public class Pregunta2 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View vista = inflater.inflate(R.layout.fragment_pregunta2, container, false);
 
-        Button botonRespuesta1 = (Button) vista.findViewById(R.id.preg2resp1);
-        Button botonRespuesta2 = (Button) vista.findViewById(R.id.preg2resp2);
-        Button botonRespuesta3 = (Button) vista.findViewById(R.id.preg2resp3);
-        Button botonRespuesta4 = (Button) vista.findViewById(R.id.preg2resp4);
+        listView = vista.findViewById(R.id.listViewPreg2);
 
-        botonRespuesta1.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                GameActivity activity = (GameActivity) getActivity();
-                if (activity != null) {
-                    activity.sumarPuntuacion();
-                    activity.mostrarFragmentRespuestaCorrecta();
-                }
-            }
-        });
+        respuestas = new ArrayList<>();
+        // Añade tus respuestas aquí
+        respuestas.add("1914");
+        respuestas.add("1921");
+        respuestas.add("1939");
+        respuestas.add("1905");
 
-        botonRespuesta2.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                GameActivity activity = (GameActivity) getActivity();
-                if (activity != null) {
-                    activity.restarPuntuacion();
-                    activity.mostrarFragmentRespuestaIncorrecta();
-                }
-            }
-        });
+        ArrayAdapter<String> adaptadorRespuestas = new ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, respuestas);
 
-        botonRespuesta3.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                GameActivity activity = (GameActivity) getActivity();
-                if (activity != null) {
-                    activity.restarPuntuacion();
-                    activity.mostrarFragmentRespuestaIncorrecta();
-                }
-            }
-        });
+        listView.setAdapter(adaptadorRespuestas);
 
-        botonRespuesta4.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                GameActivity activity = (GameActivity) getActivity();
-                if (activity != null) {
-                    activity.restarPuntuacion();
-                    activity.mostrarFragmentRespuestaIncorrecta();
-                }
-            }
-        });
+        // Configura el click listener para el ListView
+        listView.setOnItemClickListener(this);
 
         return vista;
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        // Maneja el evento de clic en un elemento del ListView
+        String respuestaSeleccionada = respuestas.get(position);
+        // Aquí puedes hacer algo con la respuesta seleccionada, por ejemplo, mostrarla en un Toast
+
+        GameActivity activity = (GameActivity) getActivity();
+
+        if (respuestaSeleccionada.equals("1914")) {
+            activity.sumarPuntuacion();
+            activity.mostrarFragmentRespuestaCorrecta();
+        } else {
+            activity.restarPuntuacion();
+            activity.mostrarFragmentRespuestaIncorrecta();
+        }
     }
 }

@@ -9,6 +9,27 @@
     android:orientation="vertical"
     tools:context=".Pregunta1" >
 
+    <ListView
+        android:id="@+id/listViewPreg2"
+        android:layout_width="400dp"
+        android:layout_height="264dp"
+        android:background="@drawable/fondonubes"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@android:color/black"
+        android:dividerHeight="1dp"
+        android:fadeScrollbars="false"
+        android:padding="16dp"
+        android:scrollbarSize="8dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbarThumbVertical="@android:color/white"
+        android:scrollbars="none"
+        android:smoothScrollbar="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pregunta2"
+        app:layout_constraintVertical_bias="0.264"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp" />
+
     <TextView
         android:id="@+id/pregunta2"
         android:layout_width="373dp"
@@ -19,70 +40,12 @@
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/preg2resp4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.421"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.131"
         tools:ignore="TextSizeCheck" />
 
-    <Button
-        android:id="@+id/preg2resp1"
-        android:layout_width="150dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:onClick="onClick"
-        android:text="@string/boton1914"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pregunta2"
-        app:layout_constraintVertical_bias="0.139" />
-
-    <Button
-        android:id="@+id/preg2resp2"
-        android:layout_width="150dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:onClick="onClick"
-        android:text="@string/boton1921"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.573" />
-
-    <Button
-        android:id="@+id/preg2resp3"
-        android:layout_width="150dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:onClick="onClick"
-        android:text="@string/boton1939"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.708" />
-
-    <Button
-        android:id="@+id/preg2resp4"
-        android:layout_width="150dp"
-        android:layout_height="70dp"
-        android:layout_marginBottom="120dp"
-        android:onClick="onClick"
-        android:text="@string/boton1905"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
