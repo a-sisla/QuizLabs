@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -56,14 +57,14 @@ public class GameActivity extends AppCompatActivity {
                 break;
             case 5:
                 preguntaFragment = pregunta5;
-            default:
-                //Mostrar activity "Fin del juego, has conseguido x puntos" Pulsar botón volver menu principal
-
-                break;
         }
 
         if (preguntaFragment != null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.contenedorFragments, preguntaFragment).commit();
+        } else {
+            Intent intent = new Intent(this, GameOverActivity.class);
+            intent.putExtra("puntos", puntuacion);
+            startActivity(intent);
         }
     }
 

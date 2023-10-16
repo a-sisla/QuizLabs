@@ -42,20 +42,20 @@
         tools:ignore="TextSizeCheck" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="145dp"
-        android:layout_height="85dp"
+        android:id="@+id/textViewPuntos"
+        android:layout_width="89dp"
+        android:layout_height="79dp"
         android:fontFamily="casual"
-        android:textAlignment="center"
+        android:textAlignment="textEnd"
         android:textColor="@color/white"
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintHorizontal_bias="0.121"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.173" />
+        app:layout_constraintVertical_bias="0.172" />
 
     <TextView
         android:id="@+id/textView4"
@@ -69,9 +69,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.92"
+        app:layout_constraintHorizontal_bias="0.72"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.172"
+        app:layout_constraintVertical_bias="0.171"
         tools:ignore="TextSizeCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

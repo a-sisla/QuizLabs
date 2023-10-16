@@ -1,7 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ladrillos"
-    tools:context=".Pregunta5" />
+    tools:context=".Pregunta5" >
+
+    <TextView
+        android:id="@+id/enunciadoPregunta5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:fontFamily="casual"
+        android:text="@string/pregunta5"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/preg5resp1"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="72dp"
+        android:drawableLeft="@drawable/bmw"
+        android:onClick="onClick"
+        android:text="@string/botonBMW"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/enunciadoPregunta5"
+        tools:ignore="RtlHardcoded" />
+
+    <Button
+        android:id="@+id/preg5resp2"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="156dp"
+        android:drawableLeft="@drawable/audi"
+        android:onClick="onClick"
+        android:text="@string/botonAudi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/enunciadoPregunta5"
+        tools:ignore="RtlHardcoded" />
+
+    <Button
+        android:id="@+id/preg5resp3"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="240dp"
+        android:drawableLeft="@drawable/renault"
+        android:onClick="onClick"
+        android:text="@string/botonRenault"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/enunciadoPregunta5"
+        tools:ignore="RtlHardcoded" />
+
+    <Button
+        android:id="@+id/preg5resp4"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="324dp"
+        android:drawableLeft="@drawable/apple"
+        android:onClick="onClick"
+        android:text="@string/botonApple"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/enunciadoPregunta5"
+        tools:ignore="RtlHardcoded" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,14 +13,15 @@
         android:layout_height="143dp"
         android:layout_marginTop="64dp"
         android:fontFamily="casual"
-        android:text="¿Cuál es el planeta más grande del sistema solar?"
+        android:text="@string/pregunta3"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.421"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextSizeCheck" />
 
     <RadioGroup
         android:id="@+id/radioGroupPregunta3"
@@ -36,41 +37,41 @@
             android:id="@+id/radioRespuesta1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:text="Venus"
             android:layout_weight="1"
-            android:onClick="seleccionarPregunta3"/>
+            android:onClick="seleccionarPregunta3"
+            android:text="@string/opcionVenus"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
         <RadioButton
             android:id="@+id/radioRespuesta2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="seleccionarPregunta3"
+            android:text="@string/opcionJupiter"
             android:textColor="@color/white"
-            android:textSize="20sp"
-            android:text="Júpiter"
-            android:onClick="seleccionarPregunta3"/>
+            android:textSize="20sp" />
 
         <RadioButton
             android:id="@+id/radioRespuesta3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="seleccionarPregunta3"
+            android:text="@string/opcionMarte"
             android:textColor="@color/white"
-            android:textSize="20sp"
-            android:text="Marte"
-            android:onClick="seleccionarPregunta3"/>
+            android:textSize="20sp" />
 
         <RadioButton
             android:id="@+id/radioRespuesta4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="seleccionarPregunta3"
+            android:text="@string/opcionSaturno"
             android:textColor="@color/white"
-            android:textSize="20sp"
-            android:text="Saturno"
-            android:onClick="seleccionarPregunta3"/>
+            android:textSize="20sp" />
 
     </RadioGroup>
 
@@ -78,9 +79,9 @@
         android:id="@+id/botonValidar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Validar"
+        android:layout_margin="16dp"
+        android:text="@string/botonValidar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="16dp"/>
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

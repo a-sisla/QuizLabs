@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +60,57 @@ public class Pregunta5 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pregunta5, container, false);
+        View vista = inflater.inflate(R.layout.fragment_pregunta5, container, false);
+
+        Button botonRespuesta1 = (Button) vista.findViewById(R.id.preg5resp1);
+        Button botonRespuesta2 = (Button) vista.findViewById(R.id.preg5resp2);
+        Button botonRespuesta3 = (Button) vista.findViewById(R.id.preg5resp3);
+        Button botonRespuesta4 = (Button) vista.findViewById(R.id.preg5resp4);
+
+        botonRespuesta1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                GameActivity activity = (GameActivity) getActivity();
+                if (activity != null) {
+                    activity.restarPuntuacion();
+                    activity.mostrarFragmentRespuestaIncorrecta();
+                }
+            }
+        });
+
+        botonRespuesta2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                GameActivity activity = (GameActivity) getActivity();
+                if (activity != null) {
+                    activity.restarPuntuacion();
+                    activity.mostrarFragmentRespuestaIncorrecta();
+                }
+            }
+        });
+
+        botonRespuesta3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                GameActivity activity = (GameActivity) getActivity();
+                if (activity != null) {
+                    activity.restarPuntuacion();
+                    activity.mostrarFragmentRespuestaIncorrecta();
+                }
+            }
+        });
+
+        botonRespuesta4.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                GameActivity activity = (GameActivity) getActivity();
+                if (activity != null) {
+                    activity.sumarPuntuacion();
+                    activity.mostrarFragmentRespuestaCorrecta();
+                }
+            }
+        });
+
+        return vista;
     }
 }

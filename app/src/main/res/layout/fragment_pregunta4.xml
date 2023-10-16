@@ -7,6 +7,22 @@
     android:background="@drawable/ladrillos"
     tools:context=".Pregunta4">
 
+    <TextView
+        android:id="@+id/Enunciadopregunta4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:fontFamily="casual"
+        android:text="@string/pregunta4"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
     <Spinner
         android:id="@+id/spinnerRespuestas"
         style="@style/SpinnerStyle"
@@ -26,7 +42,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="64dp"
-        android:text="Validar"
+        android:text="@string/botonValidar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -35,37 +51,22 @@
         android:id="@+id/textoSeleccionaTuRespuesta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Selecciona tu respuesta en el cuadro blanco de abajo:"
+        android:text="@string/textoSeleccionar"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/spinnerRespuestas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/Enunciadopregunta4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        android:fontFamily="casual"
-        android:text="¿A qué país pertenece esta bandera?"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="316dp"
         android:layout_height="230dp"
+        android:contentDescription="@string/imagenBandera"
         android:src="@drawable/banderafinlandia"
-        app:layout_constraintTop_toBottomOf="@+id/Enunciadopregunta4"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerRespuestas"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/spinnerRespuestas"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Enunciadopregunta4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
