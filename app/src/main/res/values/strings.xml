@@ -3,7 +3,7 @@
     <string name="botonJugar">JUGAR</string>
     <string name="nombreJuego">QUIZ LABS</string>
     <string name="botonInicio">INICIO</string>
-    <string name="textoGameOver1">¡HAS OBTENIDO...</string>
+    <string name="textoGameOver1">¡HAS OBTENIDO</string>
     <string name="textoGameOver2">PUNTOS!</string>
     <string name="RespuestaCorrecta">¡RESPUESTA CORRECTA!</string>
     <string name="botonSiguiente">SIGUIENTE</string>

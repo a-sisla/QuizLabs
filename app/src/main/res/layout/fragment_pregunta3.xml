@@ -11,7 +11,7 @@
         android:id="@+id/pregunta3"
         android:layout_width="373dp"
         android:layout_height="143dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="casual"
         android:text="@string/pregunta3"
         android:textAlignment="center"
@@ -30,8 +30,10 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pregunta3">
+        app:layout_constraintTop_toBottomOf="@+id/pregunta3"
+        app:layout_constraintVertical_bias="0.297">
 
         <RadioButton
             android:id="@+id/radioRespuesta1"
@@ -77,11 +79,13 @@
 
     <Button
         android:id="@+id/botonValidar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="145dp"
+        android:layout_height="55dp"
         android:layout_margin="16dp"
+        android:layout_marginBottom="150dp"
         android:text="@string/botonValidar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupPregunta3" />
 </androidx.constraintlayout.widget.ConstraintLayout>

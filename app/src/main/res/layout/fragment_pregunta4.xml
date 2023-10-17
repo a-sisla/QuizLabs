@@ -11,7 +11,7 @@
         android:id="@+id/Enunciadopregunta4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="casual"
         android:text="@string/pregunta4"
         android:textAlignment="center"
@@ -28,24 +28,24 @@
         style="@style/SpinnerStyle"
         android:layout_width="379dp"
         android:layout_height="48dp"
-        android:layout_marginTop="520dp"
+        android:layout_marginTop="8dp"
         android:entries="@array/opciones_respuestas"
         android:prompt="@string/selecciona_respuesta"
-        app:layout_constraintBottom_toTopOf="@+id/botonValidar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textoSeleccionaTuRespuesta" />
 
     <Button
         android:id="@+id/botonValidar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="145dp"
+        android:layout_height="55dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="64dp"
         android:text="@string/botonValidar"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerRespuestas" />
 
     <TextView
         android:id="@+id/textoSeleccionaTuRespuesta"
@@ -53,19 +53,20 @@
         android:layout_height="wrap_content"
         android:text="@string/textoSeleccionar"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/spinnerRespuestas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="316dp"
         android:layout_height="230dp"
+        android:layout_marginTop="4dp"
         android:contentDescription="@string/imagenBandera"
         android:src="@drawable/banderafinlandia"
-        app:layout_constraintBottom_toTopOf="@+id/spinnerRespuestas"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Enunciadopregunta4" />
 

@@ -5,17 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ladrillos"
-    android:layout_weight="4"
-    android:orientation="vertical"
     tools:context=".Pregunta1" >
 
     <ListView
         android:id="@+id/listViewPreg2"
-        android:layout_width="400dp"
-        android:layout_height="264dp"
-        android:background="@drawable/fondonubes"
+        android:layout_width="386dp"
+        android:layout_height="262dp"
+        android:background="@drawable/ladrilloblanco"
         android:cacheColorHint="@android:color/transparent"
-        android:divider="@android:color/black"
+        android:divider="@color/black"
         android:dividerHeight="1dp"
         android:fadeScrollbars="false"
         android:padding="16dp"
@@ -25,16 +23,18 @@
         android:scrollbars="none"
         android:smoothScrollbar="true"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pregunta2"
-        app:layout_constraintVertical_bias="0.264"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp" />
+        app:layout_constraintVertical_bias="0.232"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/pregunta2"
         android:layout_width="373dp"
         android:layout_height="143dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="casual"
         android:text="@string/pregunta2"
         android:textAlignment="center"
