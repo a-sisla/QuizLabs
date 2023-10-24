@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -62,10 +63,10 @@ public class Pregunta5 extends Fragment {
         // Inflate the layout for this fragment
         View vista = inflater.inflate(R.layout.fragment_pregunta5, container, false);
 
-        Button botonRespuesta1 = (Button) vista.findViewById(R.id.preg5resp1);
-        Button botonRespuesta2 = (Button) vista.findViewById(R.id.preg5resp3);
-        Button botonRespuesta3 = (Button) vista.findViewById(R.id.preg5resp3);
-        Button botonRespuesta4 = (Button) vista.findViewById(R.id.preg5resp4);
+        ImageButton botonRespuesta1 = (ImageButton) vista.findViewById(R.id.preg5resp1);
+        ImageButton botonRespuesta2 = (ImageButton) vista.findViewById(R.id.preg5resp3);
+        ImageButton botonRespuesta3 = (ImageButton) vista.findViewById(R.id.preg5resp3);
+        ImageButton botonRespuesta4 = (ImageButton) vista.findViewById(R.id.preg5resp4);
 
         botonRespuesta1.setOnClickListener(new View.OnClickListener(){
             @Override
