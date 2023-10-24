@@ -63,7 +63,7 @@ public class Pregunta5 extends Fragment {
         View vista = inflater.inflate(R.layout.fragment_pregunta5, container, false);
 
         Button botonRespuesta1 = (Button) vista.findViewById(R.id.preg5resp1);
-        Button botonRespuesta2 = (Button) vista.findViewById(R.id.preg5resp2);
+        Button botonRespuesta2 = (Button) vista.findViewById(R.id.preg5resp3);
         Button botonRespuesta3 = (Button) vista.findViewById(R.id.preg5resp3);
         Button botonRespuesta4 = (Button) vista.findViewById(R.id.preg5resp4);
 

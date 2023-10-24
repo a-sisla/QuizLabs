@@ -25,56 +25,70 @@
 
     <RadioGroup
         android:id="@+id/radioGroupPregunta3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="131dp"
+        android:layout_height="221dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pregunta3"
-        app:layout_constraintVertical_bias="0.297">
+        app:layout_constraintVertical_bias="0.297"
+        tools:ignore="TextSizeCheck">
 
         <RadioButton
             android:id="@+id/radioRespuesta1"
-            android:layout_width="wrap_content"
+            style="@style/RadioButtonStyle"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="casual"
             android:onClick="seleccionarPregunta3"
             android:text="@string/opcionVenus"
+            android:textAlignment="viewStart"
             android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/radioRespuesta2"
-            android:layout_width="wrap_content"
+            style="@style/RadioButtonStyle"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="casual"
             android:onClick="seleccionarPregunta3"
             android:text="@string/opcionJupiter"
+            android:textAlignment="viewStart"
             android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/radioRespuesta3"
-            android:layout_width="wrap_content"
+            style="@style/RadioButtonStyle"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="casual"
             android:onClick="seleccionarPregunta3"
             android:text="@string/opcionMarte"
             android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/radioRespuesta4"
-            android:layout_width="wrap_content"
+            style="@style/RadioButtonStyle"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="casual"
             android:onClick="seleccionarPregunta3"
             android:text="@string/opcionSaturno"
             android:textColor="@color/white"
-            android:textSize="20sp" />
-
+            android:textSize="24sp"
+            android:textStyle="bold" />
     </RadioGroup>
 
     <Button
@@ -83,7 +97,13 @@
         android:layout_height="55dp"
         android:layout_margin="16dp"
         android:layout_marginBottom="150dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="casual"
         android:text="@string/botonValidar"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -9,8 +9,9 @@
 
     <Button
         android:id="@+id/botonJugar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="152dp"
+        android:layout_height="61dp"
+        android:background="@drawable/rounded_button"
         android:fontFamily="casual"
         android:gravity="center"
         android:onClick="Jugar"
@@ -24,7 +25,8 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.916" />
+        app:layout_constraintVertical_bias="0.914"
+        tools:ignore="TextSizeCheck" />
 
     <TextView
         android:id="@+id/textView"

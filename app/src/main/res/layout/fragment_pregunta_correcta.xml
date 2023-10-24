@@ -45,12 +45,13 @@
 
     <Button
         android:id="@+id/buttonSiguiente"
-        style="@style/Widget.Material3.Button"
         android:layout_width="292dp"
         android:layout_height="73dp"
+        android:background="@drawable/rounded_button"
         android:fontFamily="casual"
         android:text="@string/botonSiguiente"
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

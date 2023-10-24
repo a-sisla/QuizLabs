@@ -28,44 +28,71 @@
         android:id="@+id/preg1resp1"
         android:layout_width="150dp"
         android:layout_height="70dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="casual"
         android:onClick="onClick"
         android:text="@string/botonFrancia"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/preg1resp2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.996" />
+        app:layout_constraintVertical_bias="0.969" />
 
     <Button
         android:id="@+id/preg1resp2"
         android:layout_width="150dp"
         android:layout_height="70dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="casual"
         android:text="@string/botonBrasil"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/preg1resp3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/preg1resp3"
         android:layout_width="150dp"
         android:layout_height="70dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="casual"
         android:text="@string/botonEspaña"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/preg1resp4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/preg1resp4"
         android:layout_width="150dp"
         android:layout_height="70dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="casual"
         android:text="@string/botonArgentina"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextSizeCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,55 +22,40 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
-    <Button
+    <ImageButton
         android:id="@+id/preg5resp1"
-        android:layout_width="150dp"
-        android:layout_height="70dp"
-        android:drawableLeft="@drawable/bmw"
-        android:onClick="onClick"
-        android:text="@string/botonBMW"
-        app:layout_constraintBottom_toTopOf="@+id/preg5resp2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="32dp"
+        android:contentDescription="@string/botonBMW"
+        android:src="@drawable/bmw"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="RtlHardcoded" />
+        app:layout_constraintTop_toBottomOf="@+id/enunciadoPregunta5" />
 
-    <Button
+    <ImageButton
         android:id="@+id/preg5resp2"
-        android:layout_width="150dp"
-        android:layout_height="70dp"
-        android:drawableLeft="@drawable/audi"
-        android:onClick="onClick"
-        android:text="@string/botonAudi"
-        app:layout_constraintBottom_toTopOf="@+id/preg5resp3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="140dp"
+        android:contentDescription="@string/botonBMW"
+        android:src="@drawable/audi"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.459"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="RtlHardcoded" />
+        app:layout_constraintTop_toBottomOf="@+id/enunciadoPregunta5" />
 
-    <Button
+    <ImageButton
         android:id="@+id/preg5resp3"
-        android:layout_width="150dp"
-        android:layout_height="70dp"
-        android:drawableLeft="@drawable/renault"
-        android:onClick="onClick"
-        android:text="@string/botonRenault"
-        app:layout_constraintBottom_toTopOf="@+id/preg5resp4"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="272dp"
+        android:contentDescription="@string/botonBMW"
+        android:src="@drawable/bmw"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="RtlHardcoded" />
-
-    <Button
-        android:id="@+id/preg5resp4"
-        android:layout_width="150dp"
-        android:layout_height="70dp"
-        android:layout_marginBottom="60dp"
-        android:drawableLeft="@drawable/apple"
-        android:onClick="onClick"
-        android:text="@string/botonApple"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints,RtlHardcoded" />
+        app:layout_constraintTop_toBottomOf="@+id/enunciadoPregunta5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

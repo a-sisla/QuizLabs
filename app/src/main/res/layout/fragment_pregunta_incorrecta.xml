@@ -9,12 +9,13 @@
 
     <Button
         android:id="@+id/buttonReiniciar"
-        style="@style/Widget.Material3.Button"
         android:layout_width="173dp"
         android:layout_height="50dp"
+        android:background="@drawable/rounded_button"
         android:fontFamily="casual"
         android:text="@string/botonReinciar"
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -27,12 +28,13 @@
 
     <Button
         android:id="@+id/buttonSiguiente2"
-        style="@style/Widget.Material3.Button"
         android:layout_width="173dp"
         android:layout_height="50dp"
+        android:background="@drawable/rounded_button"
         android:fontFamily="casual"
         android:text="@string/botonSiguiente"
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
