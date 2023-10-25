@@ -49,6 +49,7 @@
     <string name="botonAudi">AUDI</string>
     <string name="botonRenault">RENAULT</string>
     <string name="botonApple">APPLE</string>
+    <string name="botonSeat" />
 
 
 </resources>

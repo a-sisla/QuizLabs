@@ -63,7 +63,7 @@ public class PreguntaCorrecta extends Fragment {
 
         View vista = inflater.inflate(R.layout.fragment_pregunta_correcta, container, false);
 
-        Button botonSiguiente = (Button) vista.findViewById(R.id.buttonSiguiente);
+        Button botonSiguiente = vista.findViewById(R.id.buttonSiguiente);
 
         botonSiguiente.setOnClickListener(new View.OnClickListener(){
             @Override

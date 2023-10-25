@@ -48,25 +48,6 @@ public class Pregunta1 extends Fragment {
         return fragment;
     }
 
-    public void onClick(View v) {
-        // Obtener la referencia a la actividad
-        GameActivity activity = (GameActivity) getActivity();
-
-        if (activity != null) {
-            // Llamar al método de la actividad
-
-            //activity.avanzarSiguientePregunta();
-        }
-    }
-
-    public void comprobarRespuesta1(View v) {
-        GameActivity activity = (GameActivity) getActivity();
-        if (activity != null) {
-            activity.sumarPuntuacion();
-            activity.mostrarFragmentRespuestaCorrecta();
-        }
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,10 +63,10 @@ public class Pregunta1 extends Fragment {
         // Inflate the layout for this fragment
         View vista = inflater.inflate(R.layout.fragment_pregunta1, container, false);
 
-        Button botonRespuesta1 = (Button) vista.findViewById(R.id.preg1resp1);
-        Button botonRespuesta2 = (Button) vista.findViewById(R.id.preg1resp2);
-        Button botonRespuesta3 = (Button) vista.findViewById(R.id.preg1resp3);
-        Button botonRespuesta4 = (Button) vista.findViewById(R.id.preg1resp4);
+        Button botonRespuesta1 = vista.findViewById(R.id.preg1resp1);
+        Button botonRespuesta2 = vista.findViewById(R.id.preg1resp2);
+        Button botonRespuesta3 = vista.findViewById(R.id.preg1resp3);
+        Button botonRespuesta4 = vista.findViewById(R.id.preg1resp4);
 
         botonRespuesta1.setOnClickListener(new View.OnClickListener(){
             @Override

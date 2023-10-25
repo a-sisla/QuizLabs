@@ -41,12 +41,13 @@
         android:layout_height="80dp"
         android:layout_marginTop="92dp"
         android:background="@drawable/rounded_button"
-        android:contentDescription="@string/botonAudi"
+        android:contentDescription="@string/botonSeat"
         android:src="@drawable/seatttt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enunciadoPregunta5" />
+        app:layout_constraintTop_toBottomOf="@+id/enunciadoPregunta5"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/preg5resp3"
