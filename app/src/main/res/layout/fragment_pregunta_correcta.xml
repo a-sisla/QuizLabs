@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/correcto"
+    android:background="@drawable/fondoverde"
     tools:context=".PreguntaCorrecta">
 
     <TextView
@@ -14,7 +14,7 @@
         android:fontFamily="casual"
         android:text="@string/RespuestaCorrecta"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,7 +32,7 @@
         android:fontFamily="casual"
         android:text="@string/sumaPuntos"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -61,4 +61,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.946"
         tools:ignore="TextSizeCheck" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animattion_view_correct"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="correct.json"
+        app:lottie_loop="true"
+        tools:ignore="MissingConstraints,ImageContrastCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>
