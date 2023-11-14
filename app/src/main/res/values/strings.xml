@@ -50,6 +50,17 @@
     <string name="botonRenault">RENAULT</string>
     <string name="botonApple">APPLE</string>
     <string name="botonSeat" />
+    <string name="botonRegistrar">REGISTRAR</string>
+    <string name="botonModificar">MODIFICAR</string>
+    <string name="botonBuscar">BUSCAR</string>
+    <string name="botonEliminar">ELIMINAR</string>
+    <string name="txt_codigo">Código de la pregunta</string>
+    <string name="txt_pregunta">Enunciado de la pregunta</string>
+    <string name="txt_respuesta1">Respuesta 1</string>
+    <string name="txt_respuesta2">Respuesta 2</string>
+    <string name="txt_respuesta3">Respuesta 3</string>
+    <string name="txt_respuesta4">Respuesta 4</string>
+    <string name="txt_respuestaCorrecta">Respuesta correcta (1-4)</string>
 
 
 </resources>

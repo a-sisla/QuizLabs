@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -60,9 +61,10 @@ public class GameActivity extends AppCompatActivity {
         if (preguntaFragment != null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.contenedorFragments, preguntaFragment).commit();
         } else {
+            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this);
             Intent intent = new Intent(this, GameOverActivity.class);
             intent.putExtra("puntos", puntuacion);
-            startActivity(intent);
+            startActivity(intent, options.toBundle());
         }
     }
 

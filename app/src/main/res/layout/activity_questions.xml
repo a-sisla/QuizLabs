@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ladrillos"
+    android:onClick="Modificar"
+    tools:context=".QuestionsActivity">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="152dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="124dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:onClick="Registrar"
+        android:text="@string/botonRegistrar"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.185"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="152dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="124dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:onClick="Modificar"
+        android:text="@string/botonModificar"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.826"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="152dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="52dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:onClick="Buscar"
+        android:text="@string/botonBuscar"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.185"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="152dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="52dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:onClick="Eliminar"
+        android:text="@string/botonEliminar"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.826"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/txt_codigo"
+        android:layout_width="355dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:hint="@string/txt_codigo"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txt_pregunta"
+        android:layout_width="355dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:hint="@string/txt_pregunta"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txt_respuesta1"
+        android:layout_width="355dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="168dp"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:hint="@string/txt_respuesta1"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txt_respuesta2"
+        android:layout_width="355dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="240dp"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:hint="@string/txt_respuesta2"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txt_respuesta3"
+        android:layout_width="355dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="308dp"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:hint="@string/txt_respuesta3"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txt_respuesta4"
+        android:layout_width="355dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="376dp"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:hint="@string/txt_respuesta4"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txt_respuestaCorrecta"
+        android:layout_width="355dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="444dp"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:hint="@string/txt_respuestaCorrecta"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
