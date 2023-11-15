@@ -65,4 +65,16 @@
         app:lottie_loop="true"
         tools:ignore="MissingConstraints,ImageContrastCheck" />
 
+    <Button
+        android:id="@+id/botonBD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="IrABaseDeDatos"
+        android:text="Ir a BD"
+        app:layout_constraintBottom_toTopOf="@+id/botonJugar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/animattion_view_correct" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,11 +10,13 @@ import android.os.Bundle;
 
 public class GameActivity extends AppCompatActivity {
 
+
     Pregunta1 pregunta1;
     Pregunta2 pregunta2;
     Pregunta3 pregunta3;
     Pregunta4 pregunta4;
     Pregunta5 pregunta5;
+
     PreguntaCorrecta preguntaCorrecta;
     PreguntaIncorrecta preguntaIncorrecta;
 

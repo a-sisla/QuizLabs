@@ -20,4 +20,10 @@ public class MainActivity extends AppCompatActivity {
         Intent jugar = new Intent(this, GameActivity.class);
         startActivity(jugar, options.toBundle());
     }
+
+    public void IrABaseDeDatos(View v) {
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this);
+        Intent irABaseDeDatos = new Intent(this, QuestionsActivity.class);
+        startActivity(irABaseDeDatos, options.toBundle());
+    }
 }
