@@ -89,9 +89,10 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/txt_pregunta"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.636" />
 
     <EditText
         android:id="@+id/txt_pregunta"
@@ -109,7 +110,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.875" />
 
     <EditText
         android:id="@+id/txt_respuesta1"
@@ -127,25 +129,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/txt_respuesta2"
-        android:layout_width="348dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="184dp"
-        android:layout_marginBottom="5dp"
-        android:background="@drawable/rounded_edittext"
-        android:ems="10"
-        android:hint="@string/txt_respuesta2"
-        android:importantForAutofill="no"
-        android:inputType="text"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/txt_respuesta3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.764" />
 
     <EditText
         android:id="@+id/txt_respuesta3"
@@ -160,6 +145,23 @@
         android:inputType="text"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/txt_respuesta4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.812" />
+
+    <EditText
+        android:id="@+id/txt_respuestaCorrecta"
+        android:layout_width="348dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="368dp"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:hint="@string/txt_respuestaCorrecta"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
@@ -181,22 +183,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.866" />
 
     <EditText
-        android:id="@+id/txt_respuestaCorrecta"
+        android:id="@+id/txt_respuesta2"
         android:layout_width="348dp"
         android:layout_height="48dp"
-        android:layout_marginTop="360dp"
+        android:layout_marginTop="184dp"
+        android:layout_marginBottom="5dp"
         android:background="@drawable/rounded_edittext"
         android:ems="10"
-        android:hint="@string/txt_respuestaCorrecta"
+        android:hint="@string/txt_respuesta2"
         android:importantForAutofill="no"
-        android:inputType="number"
+        android:inputType="text"
         android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/txt_respuesta3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.539"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

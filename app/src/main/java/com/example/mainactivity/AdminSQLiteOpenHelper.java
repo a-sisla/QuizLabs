@@ -1,10 +1,12 @@
 package com.example.mainactivity;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
+
     public AdminSQLiteOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
@@ -17,5 +19,10 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
+    }
+
+    public Cursor obtenerTodosLosDatos() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.query("preguntas", null, null, null, null, null, null);
     }
 }

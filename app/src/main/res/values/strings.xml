@@ -62,5 +62,7 @@
     <string name="txt_respuesta4">Respuesta 4</string>
     <string name="txt_respuestaCorrecta">Respuesta correcta (1-4)</string>
 
+    <string name="valorVacio">-</string>
+
 
 </resources>
