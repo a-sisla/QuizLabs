@@ -16,6 +16,8 @@ public class GameOverActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_over);
 
+        MusicPlayerManager.startPlaying(this, R.raw.musicafin);
+
         miTextView = findViewById(R.id.textViewPuntos);
 
         Intent intent = getIntent();
@@ -27,8 +29,11 @@ public class GameOverActivity extends AppCompatActivity {
     }
 
     public void inicio (View v) {
+        MusicPlayerManager.pulsarUnaVez(this, R.raw.botonpulsar);
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this);
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent, options.toBundle());
     }
+
+
 }

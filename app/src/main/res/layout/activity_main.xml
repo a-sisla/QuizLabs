@@ -7,6 +7,9 @@
     android:background="@drawable/ladrillos"
     tools:context=".MainActivity">
 
+
+
+
     <Button
         android:id="@+id/botonJugar"
         android:layout_width="243dp"
@@ -32,7 +35,7 @@
         android:id="@+id/textView"
         android:layout_width="358dp"
         android:layout_height="89dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="68dp"
         android:fontFamily="cursive"
         android:gravity="center"
         android:padding="5dp"
@@ -70,7 +73,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="IrABaseDeDatos"
-        android:text="Ir a BD"
+        android:text="@string/ir_a_bd"
         app:layout_constraintBottom_toTopOf="@+id/botonJugar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MainActivity</string>
+    <string name="app_name">Quiz Labs</string>
     <string name="botonJugar">JUGAR</string>
     <string name="nombreJuego">QUIZ LABS</string>
     <string name="botonInicio">INICIO</string>
@@ -63,6 +63,7 @@
     <string name="txt_respuestaCorrecta">Respuesta correcta (1-4)</string>
 
     <string name="valorVacio">-</string>
+    <string name="ir_a_bd">Ir a BD</string>
 
 
 </resources>

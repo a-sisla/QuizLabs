@@ -32,6 +32,9 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
+        MusicPlayerManager.stopPlaying();
+        MusicPlayerManager.startPlaying(this, R.raw.musicaquiz);
+
         questions = new Questions();
         preguntaCorrecta = new PreguntaCorrecta();
         preguntaIncorrecta = new PreguntaIncorrecta();
@@ -111,11 +114,15 @@ public class GameActivity extends AppCompatActivity {
 
     public void comprobarRespuesta(int respuesta) {
         if (respuestasCorrectas.get(numeroPreguntaActual) == respuesta) {
+            MusicPlayerManager.pulsarUnaVez(this, R.raw.sonidocorrecto);
             this.sumarPuntuacion();
             this.mostrarFragmentRespuestaCorrecta();
         } else {
+            MusicPlayerManager.pulsarUnaVez(this, R.raw.sonidoerror);
             this.restarPuntuacion();
             this.mostrarFragmentRespuestaIncorrecta();
         }
     }
+
+
 }

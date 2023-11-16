@@ -68,6 +68,7 @@ public class PreguntaCorrecta extends Fragment {
         botonSiguiente.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+                //MusicPlayerManager.pulsarUnaVez(requireContext(), R.raw.botonpulsar);
                 GameActivity activity = (GameActivity) getActivity();
                 if (activity != null) {
                     activity.avanzarPregunta();

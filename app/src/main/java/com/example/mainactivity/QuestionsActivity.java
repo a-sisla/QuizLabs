@@ -22,6 +22,8 @@ public class QuestionsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questions);
 
+        //MusicPlayerManager.startPlaying(this, R.raw.musicainicio);
+
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayShowHomeEnabled(true);
@@ -39,6 +41,7 @@ public class QuestionsActivity extends AppCompatActivity {
     }
 
     public void Registrar(View v) {
+
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "gestion", null, 1);
         SQLiteDatabase BdD = admin.getWritableDatabase();
 
@@ -54,9 +57,11 @@ public class QuestionsActivity extends AppCompatActivity {
         Cursor cursor = BdD.rawQuery("SELECT * FROM preguntas WHERE codigo = ?", new String[]{codigo});
 
         if (cursor.getCount() > 0) {
+            MusicPlayerManager.pulsarUnaVez(this, R.raw.sonidoerror2);
             // Ya existe un registro con el mismo código
             Toast.makeText(this, "Ya existe una pregunta con ese código", Toast.LENGTH_SHORT).show();
         } else {
+            MusicPlayerManager.pulsarUnaVez(this, R.raw.botonpulsar);
             // No hay registros con el mismo código, procede con la inserción
             try {
                 int codigoInt = Integer.parseInt(codigo);
@@ -85,9 +90,11 @@ public class QuestionsActivity extends AppCompatActivity {
 
                     Toast.makeText(this, "Pregunta registrada", Toast.LENGTH_SHORT).show();
                 } else {
+                    MusicPlayerManager.pulsarUnaVez(this, R.raw.sonidoerror2);
                     Toast.makeText(this, "La respuesta correcta debe estar en el rango [1, 4]", Toast.LENGTH_SHORT).show();
                 }
             } catch (NumberFormatException e) {
+                MusicPlayerManager.pulsarUnaVez(this, R.raw.sonidoerror2);
                 Toast.makeText(this, "El código y la respuesta correcta deben ser números válidos", Toast.LENGTH_SHORT).show();
             }
         }
@@ -97,6 +104,7 @@ public class QuestionsActivity extends AppCompatActivity {
     }
 
     public void Buscar(View v) {
+
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "gestion", null, 1);
         SQLiteDatabase BdD = admin.getWritableDatabase();
 
@@ -108,6 +116,7 @@ public class QuestionsActivity extends AppCompatActivity {
                 Cursor fila = BdD.rawQuery("SELECT pregunta, respuesta1, respuesta2, respuesta3, respuesta4, respuesta_correcta FROM preguntas WHERE codigo = ?", new String[]{codigo});
 
                 if (fila.moveToFirst()) {
+                    MusicPlayerManager.pulsarUnaVez(this, R.raw.botonpulsar);
                     int indexPregunta = fila.getColumnIndex("pregunta");
                     int indexRespuesta1 = fila.getColumnIndex("respuesta1");
                     int indexRespuesta2 = fila.getColumnIndex("respuesta2");
@@ -123,13 +132,16 @@ public class QuestionsActivity extends AppCompatActivity {
                     et_respuesta_correcta.setText(fila.getString(indexRespuestaCorrecta));
                     BdD.close();
                 } else {
+                    MusicPlayerManager.pulsarUnaVez(this, R.raw.sonidoerror2);
                     Toast.makeText(this, "La pregunta no existe", Toast.LENGTH_SHORT).show();
                     BdD.close();
                 }
             } catch (NumberFormatException e) {
+                MusicPlayerManager.pulsarUnaVez(this, R.raw.sonidoerror2);
                 Toast.makeText(this, "Ingrese un código de pregunta válido", Toast.LENGTH_SHORT).show();
             }
         } else {
+            MusicPlayerManager.pulsarUnaVez(this, R.raw.sonidoerror2);
             Toast.makeText(this, "Debe introducir el código de la pregunta", Toast.LENGTH_SHORT).show();
         }
     }
@@ -137,6 +149,7 @@ public class QuestionsActivity extends AppCompatActivity {
 
 
     public void Eliminar(View v) {
+
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "gestion", null, 1);
         SQLiteDatabase BdD = admin.getWritableDatabase();
 
@@ -156,16 +169,20 @@ public class QuestionsActivity extends AppCompatActivity {
             et_respuesta_correcta.setText("");
 
             if(cantidad == 1) {
+                MusicPlayerManager.pulsarUnaVez(this, R.raw.botonpulsar);
                 Toast.makeText(this, "La pregunta ha sido eliminada", Toast.LENGTH_SHORT).show();
             } else {
+                MusicPlayerManager.pulsarUnaVez(this, R.raw.sonidoerror2);
                 Toast.makeText(this, "La pregunta no existe", Toast.LENGTH_SHORT).show();
             }
         } else {
+            MusicPlayerManager.pulsarUnaVez(this, R.raw.sonidoerror2);
             Toast.makeText(this, "Debe introducir el código de la pregunta", Toast.LENGTH_SHORT).show();
         }
     }
 
     public void Modificar(View v) {
+        MusicPlayerManager.pulsarUnaVez(this, R.raw.botonpulsar);
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "gestion", null, 1);
         SQLiteDatabase BdD = admin.getWritableDatabase();
 
@@ -195,13 +212,17 @@ public class QuestionsActivity extends AppCompatActivity {
             BdD.close();
 
             if(cantidad == 1) {
+                MusicPlayerManager.pulsarUnaVez(this, R.raw.botonpulsar);
                 Toast.makeText(this, "La pregunta ha sido modificada", Toast.LENGTH_SHORT).show();
             } else {
+                MusicPlayerManager.pulsarUnaVez(this, R.raw.sonidoerror2);
                 Toast.makeText(this, "La pregunta no existe", Toast.LENGTH_SHORT).show();
             }
         } else if (Integer.parseInt(respuesta_correcta) < 1 && Integer.parseInt(respuesta_correcta) > 4) {
+            MusicPlayerManager.pulsarUnaVez(this, R.raw.sonidoerror2);
             Toast.makeText(this, "La respuesta correcta debe corresponder a un número en el rango [1,4]", Toast.LENGTH_SHORT).show();
         } else {
+            MusicPlayerManager.pulsarUnaVez(this, R.raw.sonidoerror2);
             Toast.makeText(this, "Faltan campos por rellenar", Toast.LENGTH_SHORT).show();
         }
     }

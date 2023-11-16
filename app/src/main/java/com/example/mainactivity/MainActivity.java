@@ -13,12 +13,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import android.media.MediaPlayer;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        MusicPlayerManager.startPlaying(this, R.raw.musicainicio);
 
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "gestion", null, 1);
         SQLiteDatabase BdD = admin.getWritableDatabase();
@@ -76,14 +80,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Jugar(View v) {
+        MusicPlayerManager.pulsarUnaVez(this, R.raw.botonpulsar);
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this);
         Intent jugar = new Intent(this, GameActivity.class);
         startActivity(jugar, options.toBundle());
     }
 
     public void IrABaseDeDatos(View v) {
+        MusicPlayerManager.pulsarUnaVez(this, R.raw.botonpulsar);
+
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this);
         Intent irABaseDeDatos = new Intent(this, QuestionsActivity.class);
         startActivity(irABaseDeDatos, options.toBundle());
     }
+    
+
 }
