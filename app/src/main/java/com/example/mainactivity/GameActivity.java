@@ -66,7 +66,7 @@ public class GameActivity extends AppCompatActivity {
 
     public void mostrarPreguntaActual() {
 
-        if (numeroPreguntaActual != numero_de_preguntas) {
+        if (numeroPreguntaActual < numero_de_preguntas) {
             Bundle args = new Bundle();
             args.putString("pr", preguntas.get(numeroPreguntaActual));
             args.putString("re1", respuestas1.get(numeroPreguntaActual));

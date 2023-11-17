@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ActivityOptions;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -65,16 +66,21 @@ public class MainActivity extends AppCompatActivity {
         ));
         List<Integer> respuestas_correctas = new ArrayList<>(Arrays.asList(3, 2, 4, 3, 1));
 
-        for(int i = 0; i < 5; i++) {
-            ContentValues registro = new ContentValues();
-            registro.put("codigo", codigos.get(i));
-            registro.put("pregunta", preguntas.get(i));
-            registro.put("respuesta1", respuestas1.get(i));
-            registro.put("respuesta2", respuestas2.get(i));
-            registro.put("respuesta3", respuestas3.get(i));
-            registro.put("respuesta4", respuestas4.get(i));
-            registro.put("respuesta_correcta", respuestas_correctas.get(i));
-            BdD.insert("preguntas", null, registro);
+        Cursor cursor = admin.obtenerTodosLosDatos();
+        int n = cursor.getCount();
+
+        if (n == 0) {
+            for (int i = 0; i < 5; i++) {
+                ContentValues registro = new ContentValues();
+                registro.put("codigo", codigos.get(i));
+                registro.put("pregunta", preguntas.get(i));
+                registro.put("respuesta1", respuestas1.get(i));
+                registro.put("respuesta2", respuestas2.get(i));
+                registro.put("respuesta3", respuestas3.get(i));
+                registro.put("respuesta4", respuestas4.get(i));
+                registro.put("respuesta_correcta", respuestas_correctas.get(i));
+                BdD.insert("preguntas", null, registro);
+            }
         }
         BdD.close();
     }
