@@ -3,9 +3,10 @@ package com.example.mainactivity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActivityOptions;
+import android.app.AlertDialog;
 import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import android.media.MediaPlayer;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -66,30 +69,33 @@ public class MainActivity extends AppCompatActivity {
         ));
         List<Integer> respuestas_correctas = new ArrayList<>(Arrays.asList(3, 2, 4, 3, 1));
 
-        Cursor cursor = admin.obtenerTodosLosDatos();
-        int n = cursor.getCount();
-
-        if (n == 0) {
-            for (int i = 0; i < 5; i++) {
-                ContentValues registro = new ContentValues();
-                registro.put("codigo", codigos.get(i));
-                registro.put("pregunta", preguntas.get(i));
-                registro.put("respuesta1", respuestas1.get(i));
-                registro.put("respuesta2", respuestas2.get(i));
-                registro.put("respuesta3", respuestas3.get(i));
-                registro.put("respuesta4", respuestas4.get(i));
-                registro.put("respuesta_correcta", respuestas_correctas.get(i));
-                BdD.insert("preguntas", null, registro);
-            }
+        for(int i = 0; i < 5; i++) {
+            ContentValues registro = new ContentValues();
+            registro.put("codigo", codigos.get(i));
+            registro.put("pregunta", preguntas.get(i));
+            registro.put("respuesta1", respuestas1.get(i));
+            registro.put("respuesta2", respuestas2.get(i));
+            registro.put("respuesta3", respuestas3.get(i));
+            registro.put("respuesta4", respuestas4.get(i));
+            registro.put("respuesta_correcta", respuestas_correctas.get(i));
+            BdD.insert("preguntas", null, registro);
         }
         BdD.close();
     }
 
     public void Jugar(View v) {
         MusicPlayerManager.pulsarUnaVez(this, R.raw.botonpulsar);
-        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this);
-        Intent jugar = new Intent(this, GameActivity.class);
-        startActivity(jugar, options.toBundle());
+        EditText editTextNombreUsuario = findViewById(R.id.username);
+        String nombreUsuario = editTextNombreUsuario.getText().toString();
+
+        if (!nombreUsuario.isEmpty()) {
+            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this);
+            Intent jugar = new Intent(this, GameActivity.class);
+            jugar.putExtra("nombreUsuario", nombreUsuario);
+            startActivity(jugar, options.toBundle());
+        } else {
+            Toast.makeText(this, "Por favor, ingrese su nombre para empezar la partida", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void IrABaseDeDatos(View v) {
@@ -99,6 +105,8 @@ public class MainActivity extends AppCompatActivity {
         Intent irABaseDeDatos = new Intent(this, QuestionsActivity.class);
         startActivity(irABaseDeDatos, options.toBundle());
     }
+
+
     
 
 }

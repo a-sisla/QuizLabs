@@ -35,5 +35,12 @@ public class GameOverActivity extends AppCompatActivity {
         startActivity(intent, options.toBundle());
     }
 
+    public void ranking (View v) {
+        MusicPlayerManager.pulsarUnaVez(this, R.raw.botonpulsar);
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this);
+        Intent intent = new Intent(this, RankingActivity.class);
+        startActivity(intent, options.toBundle());
+    }
+
 
 }

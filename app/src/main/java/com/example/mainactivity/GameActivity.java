@@ -13,6 +13,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GameActivity extends AppCompatActivity {
+
+    private long tiempoInicio;
+    private long tiempoFin;
     Questions questions;
     PreguntaCorrecta preguntaCorrecta;
     PreguntaIncorrecta preguntaIncorrecta;
@@ -31,6 +34,8 @@ public class GameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
+        tiempoInicio = System.currentTimeMillis();
 
         MusicPlayerManager.stopPlaying();
         MusicPlayerManager.startPlaying(this, R.raw.musicaquiz);
@@ -66,7 +71,7 @@ public class GameActivity extends AppCompatActivity {
 
     public void mostrarPreguntaActual() {
 
-        if (numeroPreguntaActual < numero_de_preguntas) {
+        if (numeroPreguntaActual != numero_de_preguntas) {
             Bundle args = new Bundle();
             args.putString("pr", preguntas.get(numeroPreguntaActual));
             args.putString("re1", respuestas1.get(numeroPreguntaActual));
@@ -76,6 +81,13 @@ public class GameActivity extends AppCompatActivity {
             questions.setArguments(args);
             getSupportFragmentManager().beginTransaction().replace(R.id.contenedorFragments, questions).commit();
         } else {
+
+            tiempoFin = System.currentTimeMillis();
+            float tiempoTotal = tiempoFin - tiempoInicio;
+
+            AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "gestion", null, 1);
+            admin.insertarDatosRanking(getIntent().getStringExtra("nombreUsuario"), puntuacion, tiempoTotal);
+
             ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this);
             Intent intent = new Intent(this, GameOverActivity.class);
             intent.putExtra("puntos", puntuacion);

@@ -23,7 +23,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.884" />
+        app:layout_constraintVertical_bias="0.795" />
+
+    <Button
+        android:id="@+id/irRanking"
+        android:layout_width="181dp"
+        android:layout_height="84dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="casual"
+        android:onClick="ranking"
+        android:text="@string/ranking"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.939"
+        tools:ignore="TextSizeCheck" />
 
     <TextView
         android:id="@+id/textView2"
