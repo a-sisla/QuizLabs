@@ -103,7 +103,7 @@ public class GameActivity extends AppCompatActivity {
             ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this);
             Intent intent = new Intent(this, GameOverActivity.class);
             intent.putExtra("puntos", puntuacion);
-            startActivity(intent, options.toBundle());
+            startActivity(intent, options.toBundle()); 
         }
     }
 
