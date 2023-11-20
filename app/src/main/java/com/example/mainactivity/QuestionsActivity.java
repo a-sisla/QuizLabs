@@ -11,8 +11,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.util.Objects;
-
 public class QuestionsActivity extends AppCompatActivity {
 
     private EditText et_codigo, et_pregunta, et_respuesta1, et_respuesta2, et_respuesta3, et_respuesta4, et_respuesta_correcta;
@@ -42,7 +40,7 @@ public class QuestionsActivity extends AppCompatActivity {
 
     public void Registrar(View v) {
 
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "gestion", null, 1);
+        AdminSQLiteOpenHelperP admin = new AdminSQLiteOpenHelperP(this, "gestion", null, 1);
         SQLiteDatabase BdD = admin.getWritableDatabase();
 
         String codigo = et_codigo.getText().toString();
@@ -105,7 +103,7 @@ public class QuestionsActivity extends AppCompatActivity {
 
     public void Buscar(View v) {
 
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "gestion", null, 1);
+        AdminSQLiteOpenHelperP admin = new AdminSQLiteOpenHelperP(this, "gestion", null, 1);
         SQLiteDatabase BdD = admin.getWritableDatabase();
 
         String codigo = et_codigo.getText().toString();
@@ -150,7 +148,7 @@ public class QuestionsActivity extends AppCompatActivity {
 
     public void Eliminar(View v) {
 
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "gestion", null, 1);
+        AdminSQLiteOpenHelperP admin = new AdminSQLiteOpenHelperP(this, "gestion", null, 1);
         SQLiteDatabase BdD = admin.getWritableDatabase();
 
         String codigo = et_codigo.getText().toString();
@@ -183,7 +181,7 @@ public class QuestionsActivity extends AppCompatActivity {
 
     public void Modificar(View v) {
         MusicPlayerManager.pulsarUnaVez(this, R.raw.botonpulsar);
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "gestion", null, 1);
+        AdminSQLiteOpenHelperP admin = new AdminSQLiteOpenHelperP(this, "gestion", null, 1);
         SQLiteDatabase BdD = admin.getWritableDatabase();
 
         String codigo = et_codigo.getText().toString();

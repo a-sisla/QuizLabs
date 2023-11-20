@@ -3,10 +3,9 @@ package com.example.mainactivity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActivityOptions;
-import android.app.AlertDialog;
 import android.content.ContentValues;
-import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +14,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import android.media.MediaPlayer;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -28,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         MusicPlayerManager.startPlaying(this, R.raw.musicainicio);
 
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "gestion", null, 1);
+        AdminSQLiteOpenHelperP admin = new AdminSQLiteOpenHelperP(this, "gestion", null, 1);
         SQLiteDatabase BdD = admin.getWritableDatabase();
 
         List<Integer> codigos = new ArrayList<>(Arrays.asList(1,2,3,4,5));
@@ -69,16 +67,21 @@ public class MainActivity extends AppCompatActivity {
         ));
         List<Integer> respuestas_correctas = new ArrayList<>(Arrays.asList(3, 2, 4, 3, 1));
 
-        for(int i = 0; i < 5; i++) {
-            ContentValues registro = new ContentValues();
-            registro.put("codigo", codigos.get(i));
-            registro.put("pregunta", preguntas.get(i));
-            registro.put("respuesta1", respuestas1.get(i));
-            registro.put("respuesta2", respuestas2.get(i));
-            registro.put("respuesta3", respuestas3.get(i));
-            registro.put("respuesta4", respuestas4.get(i));
-            registro.put("respuesta_correcta", respuestas_correctas.get(i));
-            BdD.insert("preguntas", null, registro);
+        Cursor cursor = admin.obtenerTodosLosDatos();
+        int n = cursor.getCount();
+
+        if(n == 0) {
+            for (int i = 0; i < 5; i++) {
+                ContentValues registro = new ContentValues();
+                registro.put("codigo", codigos.get(i));
+                registro.put("pregunta", preguntas.get(i));
+                registro.put("respuesta1", respuestas1.get(i));
+                registro.put("respuesta2", respuestas2.get(i));
+                registro.put("respuesta3", respuestas3.get(i));
+                registro.put("respuesta4", respuestas4.get(i));
+                registro.put("respuesta_correcta", respuestas_correctas.get(i));
+                BdD.insert("preguntas", null, registro);
+            }
         }
         BdD.close();
     }
@@ -105,8 +108,4 @@ public class MainActivity extends AppCompatActivity {
         Intent irABaseDeDatos = new Intent(this, QuestionsActivity.class);
         startActivity(irABaseDeDatos, options.toBundle());
     }
-
-
-    
-
 }
