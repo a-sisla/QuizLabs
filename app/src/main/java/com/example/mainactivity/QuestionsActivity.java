@@ -40,7 +40,7 @@ public class QuestionsActivity extends AppCompatActivity {
 
     public void Registrar(View v) {
 
-        AdminSQLiteOpenHelperP admin = new AdminSQLiteOpenHelperP(this, "gestion", null, 1);
+        AdminSQLiteOpenHelperP admin = new AdminSQLiteOpenHelperP(this, "gestion", null, 4);
         SQLiteDatabase BdD = admin.getWritableDatabase();
 
         String codigo = et_codigo.getText().toString();
@@ -103,7 +103,7 @@ public class QuestionsActivity extends AppCompatActivity {
 
     public void Buscar(View v) {
 
-        AdminSQLiteOpenHelperP admin = new AdminSQLiteOpenHelperP(this, "gestion", null, 1);
+        AdminSQLiteOpenHelperP admin = new AdminSQLiteOpenHelperP(this, "gestion", null, 4);
         SQLiteDatabase BdD = admin.getWritableDatabase();
 
         String codigo = et_codigo.getText().toString();
@@ -148,7 +148,7 @@ public class QuestionsActivity extends AppCompatActivity {
 
     public void Eliminar(View v) {
 
-        AdminSQLiteOpenHelperP admin = new AdminSQLiteOpenHelperP(this, "gestion", null, 1);
+        AdminSQLiteOpenHelperP admin = new AdminSQLiteOpenHelperP(this, "gestion", null, 4);
         SQLiteDatabase BdD = admin.getWritableDatabase();
 
         String codigo = et_codigo.getText().toString();
@@ -181,7 +181,7 @@ public class QuestionsActivity extends AppCompatActivity {
 
     public void Modificar(View v) {
         MusicPlayerManager.pulsarUnaVez(this, R.raw.botonpulsar);
-        AdminSQLiteOpenHelperP admin = new AdminSQLiteOpenHelperP(this, "gestion", null, 1);
+        AdminSQLiteOpenHelperP admin = new AdminSQLiteOpenHelperP(this, "gestion", null, 4);
         SQLiteDatabase BdD = admin.getWritableDatabase();
 
         String codigo = et_codigo.getText().toString();

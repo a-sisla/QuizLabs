@@ -22,7 +22,7 @@ public class GameActivity extends AppCompatActivity {
     PreguntaCorrecta preguntaCorrecta;
     PreguntaIncorrecta preguntaIncorrecta;
     int numero_de_preguntas;
-    int numero_de_ranking;
+
     List<String> preguntas = new ArrayList<>();
     List<String> respuestas1 = new ArrayList<>();
     List<String> respuestas2 = new ArrayList<>();
@@ -47,13 +47,9 @@ public class GameActivity extends AppCompatActivity {
         preguntaCorrecta = new PreguntaCorrecta();
         preguntaIncorrecta = new PreguntaIncorrecta();
 
-        AdminSQLiteOpenHelperP admin1 = new AdminSQLiteOpenHelperP(this, "gestion", null, 1);
+        AdminSQLiteOpenHelperP admin1 = new AdminSQLiteOpenHelperP(this, "gestion", null, 4);
         Cursor cursor = admin1.obtenerTodosLosDatos();
         numero_de_preguntas = cursor.getCount();
-
-        AdminSQLiteOpenHelperR admin2 = new AdminSQLiteOpenHelperR(this, "gestion", null, 1);
-        Cursor cursor1 = admin2.obtenerTodosLosDatos();
-        numero_de_ranking = cursor1.getCount();
 
         while (cursor.moveToNext()) {
             preguntas.add(cursor.getString(cursor.getColumnIndex("pregunta")));
@@ -91,13 +87,13 @@ public class GameActivity extends AppCompatActivity {
             tiempoFin = System.currentTimeMillis();
             float tiempoTotal = tiempoFin - tiempoInicio;
 
-            AdminSQLiteOpenHelperR admin = new AdminSQLiteOpenHelperR(this, "gestion1", null, 1);
+            AdminSQLiteOpenHelperP admin = new AdminSQLiteOpenHelperP(this, "gestion", null, 4);
             SQLiteDatabase BdD = admin.getWritableDatabase();
             Intent intent1 = getIntent();
             String dato = intent1.getStringExtra("nombreUsuario");
 
             ContentValues registro = new ContentValues();
-            registro.put("id", numero_de_ranking);
+
             registro.put("nombre", dato);
             registro.put("puntuacion", puntuacion);
             registro.put("tiempo", tiempoTotal/1000);

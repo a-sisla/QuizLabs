@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         MusicPlayerManager.startPlaying(this, R.raw.musicainicio);
 
-        AdminSQLiteOpenHelperP admin = new AdminSQLiteOpenHelperP(this, "gestion", null, 1);
+        AdminSQLiteOpenHelperP admin = new AdminSQLiteOpenHelperP(this, "gestion", null, 4);
         SQLiteDatabase BdD = admin.getWritableDatabase();
 
         List<Integer> codigos = new ArrayList<>(Arrays.asList(1,2,3,4,5));

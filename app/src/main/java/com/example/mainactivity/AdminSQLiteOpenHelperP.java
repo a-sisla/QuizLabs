@@ -15,15 +15,25 @@ public class AdminSQLiteOpenHelperP extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase miBBDD) {
         miBBDD.execSQL("create table preguntas(codigo int primary key, pregunta text, respuesta1 text, respuesta2 text, respuesta3 text, respuesta4 text, respuesta_correcta int)");
+        miBBDD.execSQL("create table ranking(nombre String, puntuacion int, tiempo float)");
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS preguntas");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS ranking");
+        onCreate(sqLiteDatabase);
+        //sqLiteDatabase.execSQL("CREATE TABLE ranking (codigo INTEGER PRIMARY KEY, nombre TEXT, puntuacion INTEGER, tiempo REAL);");
     }
 
     public Cursor obtenerTodosLosDatos() {
         SQLiteDatabase db = this.getReadableDatabase();
         return db.query("preguntas", null, null, null, null, null, null);
+    }
+
+    public Cursor obtenerTodosLosDatosRanking() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.query("ranking", null, null, null, null, null, null);
     }
 }
