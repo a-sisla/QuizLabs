@@ -12,44 +12,7 @@
     <string name="restaPuntos">-2 PUNTOS</string>
     <string name="botonReinciar">REINICIAR</string>
 
-    <string name="pregunta1">1. ¿Quién ganó el mundial de fútbol en 2010?</string>
-    <string name="botonFrancia">Francia</string>
-    <string name="botonBrasil">Brasil</string>
-    <string name="botonEspaña">España</string>
-    <string name="botonArgentina">Argentina</string>
 
-    <string name="pregunta2">2. ¿En qué año comenzó la Primera Guerra Mundial?</string>
-    <string name="boton1905">1905</string>
-    <string name="boton1914">1914</string>
-    <string name="boton1921">1921</string>
-    <string name="boton1939">1939</string>
-
-    <string name="pregunta3">3. ¿Cuál es el planeta más grande del sistema solar?</string>
-    <string name="opcionVenus">Venus</string>
-    <string name="opcionJupiter">Júpiter</string>
-    <string name="opcionMarte">Marte</string>
-    <string name="opcionSaturno">Saturno</string>
-    <string name="botonValidar">VALIDAR</string>
-
-    <string name="pregunta4">4. ¿A qué país pertenece esta bandera?</string>
-    <string name="textoSeleccionar">Selecciona tu respuesta en el cuadro blanco de abajo:</string>
-    <string name="imagenBandera">BANDERA</string>
-    <array name="opciones_respuestas">
-        <item></item>
-        <item>Islandia</item>
-        <item>Suecia</item>
-        <item>Noruega</item>
-        <item>Finlandia</item>
-    </array>
-    <string name="selecciona_respuesta">Selecciona una respuesta</string>
-
-
-    <string name="pregunta5">5. ¿Cuál de los siguientes logos NO es una marca de coches?</string>
-    <string name="botonBMW">BMW</string>
-    <string name="botonAudi">AUDI</string>
-    <string name="botonRenault">RENAULT</string>
-    <string name="botonApple">APPLE</string>
-    <string name="botonSeat" />
     <string name="botonRegistrar">REGISTRAR</string>
     <string name="botonModificar">MODIFICAR</string>
     <string name="botonBuscar">BUSCAR</string>
