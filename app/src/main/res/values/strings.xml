@@ -40,5 +40,7 @@
     <string name="menu_bbdd">BASE DE DATOS</string>
     <string name="RANKING">RANKING</string>
     <string name="menu_ayuda">AYUDA</string>
+    <string name="c_mo_usar_quizlabs">Cómo usar QuizLabs</string>
+    <string name="n_n_en_la_pantalla_principal_introduce_tu_nombre_y_pulsa_jugar_para_iniciar_la_partida_intenta_responder_correctamente_a_las_preguntas_que_se_plantean_n_n_si_fallas_una_pregunta_tendr_s_la_opci_n_de_reiniciar_la_partida_para_mejorar_tu_puntuaci_n_n_n_vigila_el_tiempo_ya_que_si_empatas_a_puntos_con_otro_jugador_estar_por_encima_en_el_ranking_el_que_menos_tiempo_haya_tardado_en_completar_el_juego_n_n_en_quizlabs_podr_s_acceder_a_la_base_de_datos_para_crear_eliminar_modificar_o_buscar_preguntas_n_n_puedes_ver_el_ranking_para_comprobar_tu_posici_n_respecto_a_los_dem_s_jugadores">\n\n - En la pantalla principal, introduce tu nombre y pulsa Jugar para iniciar la partida. Intenta responder correctamente a las preguntas que se plantean.\n\n- Si fallas una pregunta tendrás la opción de reiniciar la partida para mejorar tu puntuación.\n\n- Vigila el tiempo ya que si empatas a puntos con otro jugador, estará por encima en el ranking el que menos tiempo haya tardado en completar el juego.\n\n- En QuizLabs podrás acceder a la base de datos para crear, eliminar, modificar o buscar preguntas.\n\n- Puedes ver el ranking para comprobar tu posición respecto a los demás jugadores.</string>
 
 </resources>

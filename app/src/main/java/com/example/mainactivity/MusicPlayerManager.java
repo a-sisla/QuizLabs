@@ -6,13 +6,20 @@ import android.media.MediaPlayer;
 public class MusicPlayerManager {
     private static MediaPlayer mediaPlayer;
     private static MediaPlayer mediaPlayer2;
+    private static int currentSong = -1;
 
     public static void startPlaying(Context context, int resourceId) {
-        stopPlaying();
 
-        mediaPlayer = MediaPlayer.create(context, resourceId);
-        mediaPlayer.setLooping(true);  // Repetir en bucle
-        mediaPlayer.start();
+        if(currentSong != resourceId){
+            stopPlaying();
+
+            mediaPlayer = MediaPlayer.create(context, resourceId);
+            mediaPlayer.setLooping(true);  // Repetir en bucle
+            mediaPlayer.start();
+
+           currentSong = resourceId;
+        }
+
     }
     public static void pulsarUnaVez(Context context, int resourceId) {
 

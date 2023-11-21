@@ -2,7 +2,6 @@ package com.example.mainactivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
 import android.annotation.SuppressLint;
 import android.app.ActivityOptions;
 import android.content.ContentValues;
@@ -16,13 +15,12 @@ import java.util.List;
 
 public class GameActivity extends AppCompatActivity {
 
-    private long tiempoInicio;
-    private long tiempoFin;
+    private long tiempoInicio = 0;
+    private long tiempoFin = 0;
     Questions questions;
     PreguntaCorrecta preguntaCorrecta;
     PreguntaIncorrecta preguntaIncorrecta;
     int numero_de_preguntas;
-
     List<String> preguntas = new ArrayList<>();
     List<String> respuestas1 = new ArrayList<>();
     List<String> respuestas2 = new ArrayList<>();
@@ -38,10 +36,9 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        tiempoInicio = System.currentTimeMillis();
-
-        MusicPlayerManager.stopPlaying();
         MusicPlayerManager.startPlaying(this, R.raw.musicaquiz);
+
+        tiempoInicio = System.currentTimeMillis();
 
         questions = new Questions();
         preguntaCorrecta = new PreguntaCorrecta();
@@ -110,12 +107,7 @@ public class GameActivity extends AppCompatActivity {
     public void reinciar() {
         puntuacion = 0;
         numeroPreguntaActual = 0;
-        preguntas.clear();
-        respuestas1.clear();
-        respuestas2.clear();
-        respuestas3.clear();
-        respuestas4.clear();
-        respuestasCorrectas.clear();
+        tiempoInicio = System.currentTimeMillis();
     }
     public void sumarPuntuacion() {
         puntuacion += 3;
@@ -147,4 +139,5 @@ public class GameActivity extends AppCompatActivity {
             this.mostrarFragmentRespuestaIncorrecta();
         }
     }
+
 }
