@@ -68,6 +68,7 @@
         android:background="@drawable/rounded_button"
         android:fontFamily="casual"
         android:onClick="onClick"
+        android:text="@string/valorVacio"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="20sp"

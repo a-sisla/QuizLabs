@@ -4,45 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gameover"
+    android:background="@drawable/ladrillos"
     tools:context=".GameOverActivity">
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="181dp"
-        android:layout_height="84dp"
+        android:id="@+id/botonInicioGO"
+        android:layout_width="204dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="88dp"
         android:background="@drawable/rounded_button"
-        android:fontFamily="casual"
+        android:fontFamily="sans-serif-condensed-medium"
         android:onClick="inicio"
         android:text="@string/botonInicio"
-        android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="34sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.795" />
+        tools:ignore="TouchTargetSizeCheck,TextSizeCheck" />
 
     <Button
-        android:id="@+id/irRanking"
-        android:layout_width="181dp"
-        android:layout_height="84dp"
+        android:id="@+id/botonRanking"
+        android:layout_width="204dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/rounded_button"
-        android:fontFamily="casual"
+        android:fontFamily="sans-serif-condensed-medium"
         android:onClick="ranking"
-        android:text="@string/ranking"
-        android:textAlignment="center"
+        android:text="@string/RANKING"
         android:textColor="@color/white"
-        android:textSize="34sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.939"
-        tools:ignore="TextSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,TextSizeCheck" />
 
     <TextView
         android:id="@+id/textView2"
@@ -95,4 +94,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.171"
         tools:ignore="TextSizeCheck" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/trofeo"
+        android:layout_width="251dp"
+        android:layout_height="251dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.435"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="ranking.json"
+        app:lottie_loop="true"
+        tools:ignore="MissingConstraints,ImageContrastCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

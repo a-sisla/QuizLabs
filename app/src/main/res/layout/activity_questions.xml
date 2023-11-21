@@ -8,44 +8,29 @@
     tools:context=".QuestionsActivity">
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="152dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="76dp"
+        android:id="@+id/botonInicio"
+        android:layout_width="147dp"
+        android:layout_height="38dp"
         android:background="@drawable/rounded_button"
         android:fontFamily="sans-serif-condensed-medium"
-        android:onClick="Registrar"
-        android:text="@string/botonRegistrar"
+        android:onClick="inicio"
+        android:text="@string/botonInicio"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.154"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/botonBuscar"
-        android:layout_width="152dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="76dp"
-        android:background="@drawable/rounded_button"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:onClick="Buscar"
-        android:text="@string/botonBuscar"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.799"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976"
+        tools:ignore="TouchTargetSizeCheck,TextSizeCheck" />
 
     <Button
         android:id="@+id/botonEliminar"
-        android:layout_width="152dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="12dp"
+        android:layout_width="147dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="64dp"
         android:background="@drawable/rounded_button"
         android:fontFamily="sans-serif-condensed-medium"
         android:onClick="Eliminar"
@@ -56,13 +41,50 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.799"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/botonBuscar"
+        android:layout_width="147dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="108dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:onClick="Buscar"
+        android:text="@string/botonBuscar"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.799"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/botonRegistrar"
+        android:layout_width="147dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="108dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:onClick="Registrar"
+        android:text="@string/botonRegistrar"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.155"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TouchTargetSizeCheck,TextSizeCheck" />
 
     <Button
         android:id="@+id/botonModificar"
-        android:layout_width="152dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="12dp"
+        android:layout_width="147dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="64dp"
         android:background="@drawable/rounded_button"
         android:fontFamily="sans-serif-condensed-medium"
         android:onClick="Modificar"
@@ -72,90 +94,79 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.154"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.155"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/txt_codigo"
         android:layout_width="348dp"
         android:layout_height="48dp"
         android:layout_marginTop="24dp"
-        android:layout_marginBottom="5dp"
         android:background="@drawable/rounded_edittext"
         android:ems="10"
         android:hint="@string/txt_codigo"
         android:importantForAutofill="no"
         android:inputType="number"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/txt_pregunta"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.636" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txt_pregunta"
         android:layout_width="348dp"
         android:layout_height="48dp"
-        android:layout_marginTop="72dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginTop="77dp"
         android:background="@drawable/rounded_edittext"
         android:ems="10"
         android:hint="@string/txt_pregunta"
         android:importantForAutofill="no"
         android:inputType="text"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/txt_respuesta1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.875" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txt_respuesta1"
         android:layout_width="348dp"
         android:layout_height="48dp"
-        android:layout_marginTop="128dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginTop="130dp"
         android:background="@drawable/rounded_edittext"
         android:ems="10"
         android:hint="@string/txt_respuesta1"
         android:importantForAutofill="no"
         android:inputType="text"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/txt_respuesta2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.764" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txt_respuesta3"
         android:layout_width="348dp"
         android:layout_height="48dp"
-        android:layout_marginTop="244dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginTop="236dp"
         android:background="@drawable/rounded_edittext"
         android:ems="10"
         android:hint="@string/txt_respuesta3"
         android:importantForAutofill="no"
         android:inputType="text"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/txt_respuesta4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.812" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txt_respuestaCorrecta"
         android:layout_width="348dp"
         android:layout_height="48dp"
-        android:layout_marginTop="368dp"
+        android:layout_marginTop="342dp"
         android:background="@drawable/rounded_edittext"
         android:ems="10"
         android:hint="@string/txt_respuestaCorrecta"
@@ -171,38 +182,32 @@
         android:id="@+id/txt_respuesta4"
         android:layout_width="348dp"
         android:layout_height="48dp"
-        android:layout_marginTop="300dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginTop="289dp"
         android:background="@drawable/rounded_edittext"
         android:ems="10"
         android:hint="@string/txt_respuesta4"
         android:importantForAutofill="no"
         android:inputType="text"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/txt_respuestaCorrecta"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.866" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txt_respuesta2"
         android:layout_width="348dp"
         android:layout_height="48dp"
-        android:layout_marginTop="184dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginTop="183dp"
         android:background="@drawable/rounded_edittext"
         android:ems="10"
         android:hint="@string/txt_respuesta2"
         android:importantForAutofill="no"
         android:inputType="text"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/txt_respuesta3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.7" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

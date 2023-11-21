@@ -22,7 +22,7 @@
         app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"
+        app:layout_constraintVertical_bias="0.081"
         tools:ignore="TextSizeCheck" />
 
     <TextView
@@ -40,13 +40,13 @@
         app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.092"
+        app:layout_constraintVertical_bias="0.147"
         tools:ignore="TextSizeCheck" />
 
     <Button
         android:id="@+id/buttonSiguiente"
         android:layout_width="292dp"
-        android:layout_height="73dp"
+        android:layout_height="50dp"
         android:background="@drawable/rounded_button"
         android:fontFamily="casual"
         android:text="@string/botonSiguiente"

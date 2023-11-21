@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Quiz Labs</string>
+    <string name="subject">Laboratorio de Dispositivos Móviles</string>
     <string name="botonJugar">JUGAR</string>
     <string name="nombreJuego">QUIZ LABS</string>
     <string name="botonInicio">INICIO</string>
@@ -23,15 +24,21 @@
     <string name="txt_respuesta2">Respuesta 2</string>
     <string name="txt_respuesta3">Respuesta 3</string>
     <string name="txt_respuesta4">Respuesta 4</string>
-    <string name="txt_respuestaCorrecta">Respuesta correcta (1-4)</string>
+    <string name="txt_respuestaCorrecta">Respuesta correcta (1–4)</string>
 
     <string name="valorVacio">-</string>
-    <string name="ir_a_bd">Ir a BD</string>
     <string name="ingrese_su_nombre">Ingrese su nombre</string>
-    <string name="RANKING" />
     <string name="Ranking" />
     <string name="Rank">RANKING</string>
     <string name="ranking">Ranking</string>
+    <string name="title_activity_principal">Principal</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_desc">Navigation header</string>
 
+    <string name="menu_home">HOME</string>
+    <string name="menu_bbdd">BASE DE DATOS</string>
+    <string name="RANKING">RANKING</string>
+    <string name="menu_ayuda">AYUDA</string>
 
 </resources>

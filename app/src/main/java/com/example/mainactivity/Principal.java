@@ -1,7 +1,5 @@
 package com.example.mainactivity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ActivityOptions;
 import android.content.ContentValues;
 import android.content.Intent;
@@ -9,20 +7,51 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Menu;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.navigation.NavigationView;
+
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.mainactivity.databinding.ActivityPrincipalBinding;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import android.widget.EditText;
-import android.widget.Toast;
+public class Principal extends AppCompatActivity {
 
-public class MainActivity extends AppCompatActivity {
+    private AppBarConfiguration mAppBarConfiguration;
+    private ActivityPrincipalBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+        binding = ActivityPrincipalBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        setSupportActionBar(binding.appBarPrincipal.toolbar);
+
+        DrawerLayout drawer = binding.drawerLayout;
+        NavigationView navigationView = binding.navView;
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+        mAppBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.nav_home, R.id.rankingActivity, R.id.questionsActivity)
+                .setOpenableLayout(drawer)
+                .build();
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_principal);
+        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+        NavigationUI.setupWithNavController(navigationView, navController);
 
         MusicPlayerManager.startPlaying(this, R.raw.musicainicio);
 
@@ -36,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 "¿Cuál de estos elementos químicos es líquido a temperatura ambiente?",
                 "Es el órgano que bombea sangre por todo el cuerpo",
                 "¿Qué celebran los cristianos el 25 de Diciembre?"
-                ));
+        ));
         List<String> respuestas1 = new ArrayList<>(Arrays.asList(
                 "Francia",
                 "1905",
@@ -86,6 +115,20 @@ public class MainActivity extends AppCompatActivity {
         BdD.close();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.principal, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_principal);
+        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
+                || super.onSupportNavigateUp();
+    }
+
     public void Jugar(View v) {
         MusicPlayerManager.pulsarUnaVez(this, R.raw.botonpulsar);
         EditText editTextNombreUsuario = findViewById(R.id.username);
@@ -99,13 +142,5 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Por favor, ingrese su nombre para empezar la partida", Toast.LENGTH_SHORT).show();
         }
-    }
-
-    public void IrABaseDeDatos(View v) {
-        MusicPlayerManager.pulsarUnaVez(this, R.raw.botonpulsar);
-
-        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this);
-        Intent irABaseDeDatos = new Intent(this, QuestionsActivity.class);
-        startActivity(irABaseDeDatos, options.toBundle());
     }
 }

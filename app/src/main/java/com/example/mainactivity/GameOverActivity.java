@@ -31,7 +31,7 @@ public class GameOverActivity extends AppCompatActivity {
     public void inicio (View v) {
         MusicPlayerManager.pulsarUnaVez(this, R.raw.botonpulsar);
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this);
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, Principal.class);
         startActivity(intent, options.toBundle());
     }
 

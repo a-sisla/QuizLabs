@@ -38,8 +38,13 @@ public class RankingActivity extends AppCompatActivity {
 package com.example.mainactivity;
 
 import android.annotation.SuppressLint;
+import android.app.ActivityOptions;
+import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.View;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -54,6 +59,8 @@ public class RankingActivity extends AppCompatActivity {
     List<String> nombres = new ArrayList<>();
     List<String> puntuaciones = new ArrayList<>();
     List<String> tiempos = new ArrayList<>();
+
+    TableLayout tableLayout;
 
     @SuppressLint("Range")
     @Override
@@ -71,35 +78,68 @@ public class RankingActivity extends AppCompatActivity {
             tiempos.add(cursor.getString(cursor.getColumnIndex("tiempo")));
         }
 
-        // Obtén una referencia al TableLayout
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) TableLayout tableLayout = findViewById(R.id.tableLayout);
+        tableLayout = findViewById(R.id.tableLayout);
 
-        // Crea filas y celdas dinámicamente
-        for (int i = 0; i < Math.max(nombres.size(), Math.max(puntuaciones.size(), tiempos.size())); i++) {
-            TableRow row = new TableRow(this);
+        TableRow headerRow = new TableRow(this);
+        headerRow.setLayoutParams(new TableLayout.LayoutParams(
+                TableLayout.LayoutParams.MATCH_PARENT,
+                TableLayout.LayoutParams.WRAP_CONTENT));
 
-            // Crea celdas y configura el texto
-            TextView textView1 = new TextView(this);
-            if (i < nombres.size()) {
-                textView1.setText(nombres.get(i));
-            }
-            row.addView(textView1);
+        TextView nameHeader = new TextView(this);
+        nameHeader.setText("NOMBRE");
+        nameHeader.setPadding(10, 10, 10, 10);
+        nameHeader.setTextColor(getResources().getColor(android.R.color.white));
+        nameHeader.setTypeface(null, Typeface.BOLD);
+        headerRow.addView(nameHeader);
 
-            TextView textView2 = new TextView(this);
-            if (i < puntuaciones.size()) {
-                textView2.setText(puntuaciones.get(i));
-            }
-            row.addView(textView2);
+        TextView scoreHeader = new TextView(this);
+        scoreHeader.setText("PUNTUACIÓN");
+        scoreHeader.setPadding(10, 10, 10, 10);
+        scoreHeader.setTextColor(getResources().getColor(android.R.color.white));
+        scoreHeader.setTypeface(null, Typeface.BOLD);
+        headerRow.addView(scoreHeader);
 
-            TextView textView3 = new TextView(this);
-            if (i < tiempos.size()) {
-                textView3.setText(tiempos.get(i));
-            }
-            row.addView(textView3);
+        TextView timeHeader = new TextView(this);
+        timeHeader.setText("TIEMPO (s)");
+        timeHeader.setPadding(10, 10, 10, 10);
+        timeHeader.setTextColor(getResources().getColor(android.R.color.white));
+        timeHeader.setTypeface(null, Typeface.BOLD);
+        headerRow.addView(timeHeader);
 
-            // Agrega la fila al TableLayout
-            tableLayout.addView(row);
+        tableLayout.addView(headerRow);
+
+        agregarDatosDesdeListas();
+    }
+
+    private void agregarDatosDesdeListas() {
+        for (int i = 0; i < nombres.size(); i++) {
+            TableRow dataRow = new TableRow(this);
+            dataRow.setLayoutParams(new TableLayout.LayoutParams(
+                    TableLayout.LayoutParams.MATCH_PARENT,
+                    TableLayout.LayoutParams.WRAP_CONTENT));
+
+            agregarCelda(nombres.get(i), dataRow);
+            agregarCelda(puntuaciones.get(i), dataRow);
+            agregarCelda(tiempos.get(i), dataRow);
+
+            tableLayout.addView(dataRow);
         }
+    }
+
+    private void agregarCelda(String text, TableRow row) {
+        TextView textView = new TextView(this);
+        textView.setText(text);
+        textView.setPadding(10, 10, 10, 10);
+        textView.setTextColor(getResources().getColor(android.R.color.white));
+        textView.setGravity(Gravity.CENTER);
+        row.addView(textView);
+    }
+
+    public void inicio (View v) {
+        MusicPlayerManager.pulsarUnaVez(this, R.raw.botonpulsar);
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this);
+        Intent intent = new Intent(this, Principal.class);
+        startActivity(intent, options.toBundle());
     }
 }
 

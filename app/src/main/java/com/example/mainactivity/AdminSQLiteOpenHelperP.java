@@ -24,7 +24,6 @@ public class AdminSQLiteOpenHelperP extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS preguntas");
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS ranking");
         onCreate(sqLiteDatabase);
-        //sqLiteDatabase.execSQL("CREATE TABLE ranking (codigo INTEGER PRIMARY KEY, nombre TEXT, puntuacion INTEGER, tiempo REAL);");
     }
 
     public Cursor obtenerTodosLosDatos() {
@@ -34,6 +33,7 @@ public class AdminSQLiteOpenHelperP extends SQLiteOpenHelper {
 
     public Cursor obtenerTodosLosDatosRanking() {
         SQLiteDatabase db = this.getReadableDatabase();
-        return db.query("ranking", null, null, null, null, null, null);
+        String orderBy = "puntuacion DESC, tiempo ASC";
+        return db.query("ranking", null, null, null, null, null, orderBy);
     }
 }

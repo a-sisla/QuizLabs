@@ -45,6 +45,7 @@
         app:layout_constraintVertical_bias="0.928"
         tools:ignore="TextSizeCheck" />
 
+
     <TextView
         android:id="@+id/textView8"
         android:layout_width="388dp"
@@ -60,7 +61,7 @@
         app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.091"
+        app:layout_constraintVertical_bias="0.147"
         tools:ignore="TextSizeCheck" />
 
     <TextView
@@ -75,12 +76,11 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"
+        app:layout_constraintVertical_bias="0.084"
         tools:ignore="TextSizeCheck" />
-
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animattion_view_correct"

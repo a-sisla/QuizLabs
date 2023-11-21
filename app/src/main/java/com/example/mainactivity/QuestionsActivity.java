@@ -3,7 +3,9 @@ package com.example.mainactivity;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActivityOptions;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -144,8 +146,6 @@ public class QuestionsActivity extends AppCompatActivity {
         }
     }
 
-
-
     public void Eliminar(View v) {
 
         AdminSQLiteOpenHelperP admin = new AdminSQLiteOpenHelperP(this, "gestion", null, 4);
@@ -225,9 +225,10 @@ public class QuestionsActivity extends AppCompatActivity {
         }
     }
 
-
-
-
-
-
+    public void inicio (View v) {
+        MusicPlayerManager.pulsarUnaVez(this, R.raw.botonpulsar);
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this);
+        Intent intent = new Intent(this, Principal.class);
+        startActivity(intent, options.toBundle());
+    }
 }
