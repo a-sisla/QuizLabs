@@ -43,20 +43,19 @@
 
     <TextView
         android:id="@+id/textView9"
-        android:layout_width="365dp"
-        android:layout_height="434dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginBottom="102dp"
-        android:fontFamily="casual"
-        android:text="@string/n_n_en_la_pantalla_principal_introduce_tu_nombre_y_pulsa_jugar_para_iniciar_la_partida_intenta_responder_correctamente_a_las_preguntas_que_se_plantean_n_n_si_fallas_una_pregunta_tendr_s_la_opci_n_de_reiniciar_la_partida_para_mejorar_tu_puntuaci_n_n_n_vigila_el_tiempo_ya_que_si_empatas_a_puntos_con_otro_jugador_estar_por_encima_en_el_ranking_el_que_menos_tiempo_haya_tardado_en_completar_el_juego_n_n_en_quizlabs_podr_s_acceder_a_la_base_de_datos_para_crear_eliminar_modificar_o_buscar_preguntas_n_n_puedes_ver_el_ranking_para_comprobar_tu_posici_n_respecto_a_los_dem_s_jugadores"
+        android:layout_width="350dp"
+        android:layout_height="400dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="@string/instrucciones"
         android:textColor="@color/white"
-        android:textSize="15sp"
+        android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Titulo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.444"
         tools:ignore="MissingConstraints,TextSizeCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
