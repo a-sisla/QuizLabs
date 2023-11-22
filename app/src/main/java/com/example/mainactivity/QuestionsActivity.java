@@ -59,9 +59,9 @@ public class QuestionsActivity extends AppCompatActivity {
             // Ya existe un registro con el mismo código
             Toast.makeText(this, "Ya existe una pregunta con ese código", Toast.LENGTH_SHORT).show();
         } else {
-            MusicPlayerManager.pulsarUnaVez(this, R.raw.botonpulsar);
             // No hay registros con el mismo código
             try {
+
                 int codigoInt = Integer.parseInt(codigo);
                 int respuestaCorrectaInt = Integer.parseInt(respuesta_correcta);
 
@@ -86,6 +86,7 @@ public class QuestionsActivity extends AppCompatActivity {
                     et_respuesta4.setText("");
                     et_respuesta_correcta.setText("");
 
+                    MusicPlayerManager.pulsarUnaVez(this, R.raw.botonpulsar);
                     Toast.makeText(this, "Pregunta registrada", Toast.LENGTH_SHORT).show();
                 } else {
                     MusicPlayerManager.pulsarUnaVez(this, R.raw.sonidoerror2);
@@ -175,10 +176,8 @@ public class QuestionsActivity extends AppCompatActivity {
         }
     }
 
+
     public void Modificar(View v) {
-        MusicPlayerManager.pulsarUnaVez(this, R.raw.botonpulsar);
-        AdminSQLiteOpenHelperP admin = new AdminSQLiteOpenHelperP(this, "gestion", null, 4);
-        SQLiteDatabase BdD = admin.getWritableDatabase();
 
         String codigo = et_codigo.getText().toString();
         String pregunta = et_pregunta.getText().toString();
@@ -188,7 +187,16 @@ public class QuestionsActivity extends AppCompatActivity {
         String respuesta4 = et_respuesta4.getText().toString();
         String respuesta_correcta = et_respuesta_correcta.getText().toString();
 
-        if(codigo!="" && pregunta!="" && respuesta1 !="" && respuesta2!="" && respuesta3!="" && respuesta4!="" && respuesta_correcta!="" && (Integer.parseInt(respuesta_correcta) >= 1 && Integer.parseInt(respuesta_correcta) <= 4)) {
+        AdminSQLiteOpenHelperP admin = new AdminSQLiteOpenHelperP(this, "gestion", null, 4);
+        SQLiteDatabase BdD = admin.getWritableDatabase();
+
+        if (codigo.isEmpty() || pregunta.isEmpty() || respuesta1.isEmpty() || respuesta2.isEmpty() || respuesta3.isEmpty() || respuesta4.isEmpty() || respuesta_correcta.isEmpty()) {
+            MusicPlayerManager.pulsarUnaVez(this, R.raw.sonidoerror2);
+            Toast.makeText(this, "Faltan campos por rellenar", Toast.LENGTH_SHORT).show();
+        } else if (Integer.parseInt(respuesta_correcta) < 1 || Integer.parseInt(respuesta_correcta) > 4){
+            MusicPlayerManager.pulsarUnaVez(this, R.raw.sonidoerror2);
+            Toast.makeText(this, "La respuesta correcta debe corresponder a un número en el rango [1,4]", Toast.LENGTH_SHORT).show();
+        } else {
             int codigoInt = Integer.parseInt(codigo);
             int respuestaCorrectaInt = Integer.parseInt(respuesta_correcta);
 
@@ -205,19 +213,13 @@ public class QuestionsActivity extends AppCompatActivity {
             int cantidad = BdD.update("preguntas", registro, "codigo=" + codigoInt, null);
             BdD.close();
 
-            if(cantidad == 1) {
+            if (cantidad == 1) {
                 MusicPlayerManager.pulsarUnaVez(this, R.raw.botonpulsar);
                 Toast.makeText(this, "La pregunta ha sido modificada", Toast.LENGTH_SHORT).show();
             } else {
                 MusicPlayerManager.pulsarUnaVez(this, R.raw.sonidoerror2);
                 Toast.makeText(this, "La pregunta no existe", Toast.LENGTH_SHORT).show();
             }
-        } else if (Integer.parseInt(respuesta_correcta) < 1 || Integer.parseInt(respuesta_correcta) > 4) {
-            MusicPlayerManager.pulsarUnaVez(this, R.raw.sonidoerror2);
-            Toast.makeText(this, "La respuesta correcta debe corresponder a un número en el rango [1,4]", Toast.LENGTH_SHORT).show();
-        } else { //No se mete por aquí y la app explota
-            MusicPlayerManager.pulsarUnaVez(this, R.raw.sonidoerror2);
-            Toast.makeText(this, "Faltan campos por rellenar", Toast.LENGTH_SHORT).show();
         }
     }
 
