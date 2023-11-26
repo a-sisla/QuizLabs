@@ -120,13 +120,4 @@ public class Questions extends Fragment {
         return vista;
     }
 
-    public void setTexts(String pr, String res1, String res2, String res3, String res4) {
-        if (pregunta != null && botonRespuesta1 != null && botonRespuesta2 != null && botonRespuesta3 != null && botonRespuesta4 != null) {
-            pregunta.setText(pr);
-            botonRespuesta1.setText(res1);
-            botonRespuesta2.setText(res2);
-            botonRespuesta3.setText(res3);
-            botonRespuesta4.setText(res4);
-        }
-    }
 }

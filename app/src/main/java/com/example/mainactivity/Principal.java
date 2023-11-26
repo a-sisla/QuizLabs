@@ -29,13 +29,12 @@ import java.util.List;
 public class Principal extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    private ActivityPrincipalBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityPrincipalBinding.inflate(getLayoutInflater());
+        com.example.mainactivity.databinding.ActivityPrincipalBinding binding = ActivityPrincipalBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarPrincipal.toolbar);

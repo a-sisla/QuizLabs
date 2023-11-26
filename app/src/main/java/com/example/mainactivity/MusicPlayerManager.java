@@ -5,7 +5,6 @@ import android.media.MediaPlayer;
 
 public class MusicPlayerManager {
     private static MediaPlayer mediaPlayer;
-    private static MediaPlayer mediaPlayer2;
     private static int currentSong = -1;
 
     public static void startPlaying(Context context, int resourceId) {
@@ -23,7 +22,7 @@ public class MusicPlayerManager {
     }
     public static void pulsarUnaVez(Context context, int resourceId) {
 
-        mediaPlayer2 = MediaPlayer.create(context, resourceId);
+        MediaPlayer mediaPlayer2 = MediaPlayer.create(context, resourceId);
         mediaPlayer2.start();
 
     }
