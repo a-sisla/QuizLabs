@@ -55,7 +55,7 @@
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tu_usuario/quiz-labs.git
+   git clone https://github.com/a-sisla/QuizLabs.git
    
 2. Abre el proyecto en Android Studio.
 
