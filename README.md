@@ -62,3 +62,24 @@
 3. Asegúrate de tener configurado un dispositivo o un emulador para probar la aplicación.
 
 4. Ejecuta la aplicación en el emulador o dispositivo Android.
+
+# Autores
+
+https://github.com/a-sisla
+
+https://github.com/a-martinma
+
+# Imágenes
+
+<div style="display: flex; gap: 20px;">
+  <img src="img/pantallaInicio.png" alt="Pantalla de inicio" width="200"/>
+  <img src="img/pantallaPregunta.png" alt="Pantalla de pregunta" width="200"/>
+  <img src="img/pantallaRanking.png" alt="Pantalla de ranking" width="200"/>
+  <img src="img/pantallaBD.png" alt="Pantalla de base de datos" width="200"/>
+</div>
+
+
+
+
+
+
